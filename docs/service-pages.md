@@ -68,11 +68,14 @@ public/
 
 ## 스크롤 효과와 접근성
 
+- 틸드 첫 화면은 카페에서의 만남, 독서 모임, 강변 약속을 담은 20초 무음 영상입니다. 세 장의 생성 이미지를 Blender 카메라로 재구성해 여섯 컷으로 편집했습니다. 영상은 `public/videos/tilde/encounters.mp4`, 첫 프레임은 `public/images/tilde/photography/encounters-poster.webp`에 있습니다.
+- `TildeHeroFilm`은 영상 자체 시간으로 반복 재생합니다. 방문자는 일시정지와 이어 재생을 선택할 수 있습니다. 동작 줄이기를 설정하거나 자동재생이 차단되면 포스터와 재생 버튼을 표시합니다. 전체 화면 영상과 짧은 문구의 배치는 [Park Pictures](https://parkpictures.com/)를 참고했습니다.
+
 - `ScrollReveal`: 화면 진입 시 콘텐츠를 한 번 부드럽게 표시합니다. 처음부터 화면에 있는 콘텐츠와 JavaScript를 실행하지 않는 환경에서는 본문을 숨기지 않습니다.
 - `ScrollScene`: `requestAnimationFrame`으로 스크롤 진행률을 CSS 변수에 전달해 휴대폰과 사진을 천천히 이동합니다. React 상태를 매 프레임 갱신하지 않으며 화면 밖에서는 업데이트를 줄입니다.
 - 넓고 충분히 높은 화면에서는 어썸의 초대장 장면과 틸드의 활동 장면을 sticky 방식으로 보여줍니다. 모바일·좁은 화면·낮은 화면에서는 자연스러운 세로 배치로 전환합니다.
 - `prefers-reduced-motion: reduce`에서는 연속 이동과 전환 효과를 줄이고 콘텐츠를 표시합니다.
-- 모든 서비스 본문은 Server Component를 기본으로 하며, 스크롤 제어와 ON/OFF 미리보기만 Client Component로 사용합니다. 기존 SSG 배포 방식을 유지합니다.
+- 서비스 본문은 Server Component를 기본으로 하며 영상 재생, 스크롤 제어, ON/OFF 미리보기의 상호작용에 Client Component를 사용합니다.
 
 ## 스타일 관리
 

@@ -1,56 +1,33 @@
-import Image from "next/image";
-import ScrollScene from "../../../../components/motion/ScrollScene";
 import { tildeService } from "../../_data/service";
-import TildeMatchScreen from "../app-preview/TildeMatchScreen";
+import TildeHeroFilm from "./TildeHeroFilm";
 import styles from "./tilde-hero.module.css";
 
 export default function TildeHero() {
     return (
-        <ScrollScene className={styles.hero}>
+        <section
+            aria-labelledby="tilde-title"
+            className={`${styles.hero} -mx-5 -mt-44 sm:-mx-8 sm:-mt-40 lg:-mx-16`}
+        >
             <div className={styles.copy}>
-                <div className={styles.brand}>
-                    <Image
-                        src="/images/tilde/brand/tilde-symbol.webp"
-                        width={100}
-                        height={27}
-                        priority
-                        alt="틸드 물결 심볼"
-                    />
-                    <span>
-                        틸드 <small>TILDE</small>
+                <p className="flex items-center gap-3">
+                    <span className="text-[15px] font-semibold">{tildeService.name}</span>
+                    <span lang="en" className="text-[11px] font-medium tracking-[.24em]">
+                        TILDE
                     </span>
-                </div>
-                <p className={styles.eyebrow}>SAME TASTE. NEW EVERYDAY.</p>
-                <h1>{tildeService.tagline}</h1>
+                    <span className="border-l border-current/45 pl-3 text-xs">출시 준비 중</span>
+                </p>
+                <h1 id="tilde-title" className={styles.title}>
+                    {tildeService.tagline}
+                </h1>
                 <p className={styles.description}>{tildeService.heroDescription}</p>
-                <div className={styles.actions}>
-                    <a href="#tilde-connections">
-                        틸드의 연결을 만나보세요 <span aria-hidden="true">↓</span>
-                    </a>
-                    <span>출시 준비 중</span>
-                </div>
             </div>
-            <div className={styles.visual}>
-                <div className={styles.photo}>
-                    <Image
-                        src="/images/tilde/photography/community.webp"
-                        fill
-                        sizes="(max-width: 900px) 85vw, 35vw"
-                        priority
-                        alt="닮은 취향으로 함께 시간을 보내는 모임의 예시"
-                    />
-                </div>
-                <div className={styles.phone}>
-                    <TildeMatchScreen />
-                </div>
-                <div className={styles.bubble}>
-                    <span>작은 취향 하나가</span>
-                    <strong>새로운 일상의 시작.</strong>
-                </div>
-                <span className={styles.circle} aria-hidden="true">
-                    ~
-                </span>
-            </div>
-        </ScrollScene>
+            <a href="#tilde-connections" className={styles.explore}>
+                세 가지 만남 살펴보기
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M8 2v11m-5-5 5 5 5-5" stroke="currentColor" strokeWidth="1.4" />
+                </svg>
+            </a>
+            <TildeHeroFilm />
+        </section>
     );
 }

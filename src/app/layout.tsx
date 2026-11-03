@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="ko">
+        <html lang="ko" data-scroll-behavior="smooth">
             <body className="flex min-h-dvh w-full min-w-0 flex-col">
                 <a href="#main-content" className="skip-link">
                     본문으로 바로가기
