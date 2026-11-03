@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import TildeHero from "./_components/hero/TildeHero";
 import TildeConnections from "./_components/connections/TildeConnections";
+import TildeSports from "./_components/sports/TildeSports";
 import TildeMode from "./_components/mode/TildeMode";
 import TildeActivities from "./_components/activities/TildeActivities";
 import ServiceCta from "../../components/service-cta/ServiceCta";
@@ -16,6 +17,7 @@ export default function TildePage() {
         <div className="w-full min-w-0 [--service-ink:#465543] [--service-accent:#697e56] [--service-muted:#606859] [--service-tint:#dce4d1]">
             <TildeHero />
             <TildeConnections />
+            <TildeSports />
             <TildeMode />
             <TildeActivities />
             <ServiceCta

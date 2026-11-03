@@ -1,87 +1,57 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import styles from "./tilde-hero.module.css";
-
-const poster = "/images/tilde/photography/encounters-poster.webp";
+import Image from "next/image";
+import { filmEditions, portraitFilmQuery } from "../../_data/film";
+import { useTildeFilm } from "../../_hooks/use-tilde-film";
 
 export default function TildeHeroFilm() {
-    const filmRef = useRef<HTMLVideoElement>(null);
-    const [playing, setPlaying] = useState(false);
-    const [failed, setFailed] = useState(false);
-
-    useEffect(() => {
-        const film = filmRef.current;
-        if (!film) return;
-
-        const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const pauseForReducedMotion = () => {
-            if (motion.matches) film.pause();
-        };
-        if (!motion.matches) {
-            // A blocked autoplay leaves the poster and manual play control in place.
-            void film.play().catch(() => {
-                if (film.error) setFailed(true);
-            });
-        }
-        motion.addEventListener("change", pauseForReducedMotion);
-        return () => {
-            motion.removeEventListener("change", pauseForReducedMotion);
-            film.pause();
-        };
-    }, []);
-
-    function togglePlayback() {
-        const film = filmRef.current;
-        if (!film) return;
-        if (!film.paused) {
-            film.pause();
-            return;
-        }
-        void film.play().catch((error: unknown) => {
-            if (error instanceof DOMException && error.name === "AbortError") return;
-            setFailed(true);
-        });
-    }
+    const { filmRef, playing, ready, failed, togglePlayback } = useTildeFilm();
+    const controlLabel = playing ? "틸드 소개 영상 일시정지" : "틸드 소개 영상 재생";
 
     return (
-        <>
-            <div
-                aria-hidden="true"
-                className={styles.backdrop}
-                style={{ backgroundImage: `url("${poster}")` }}
-            >
+        <figure>
+            <div className="relative h-[calc(100dvh-var(--inline-header-height)-3rem)] min-h-48 w-full bg-neutral-950">
+                <picture className="absolute inset-0 block">
+                    <source media={portraitFilmQuery} srcSet={filmEditions.portrait.poster} />
+                    <Image
+                        src={filmEditions.landscape.poster}
+                        alt=""
+                        fill
+                        loading="eager"
+                        fetchPriority="high"
+                        sizes="100vw"
+                        className="object-cover"
+                    />
+                </picture>
                 <video
                     ref={filmRef}
                     id="tilde-film"
-                    src="/videos/tilde/encounters.mp4"
-                    poster={poster}
+                    aria-label="서로 다른 사람들과 나눈 일상의 만남 뒤로 강변에 핀 코스모스가 바람에 계속 흔들립니다."
                     preload="none"
                     muted
                     playsInline
-                    loop
+                    disablePictureInPicture
+                    disableRemotePlayback
                     hidden={failed}
-                    onPlaying={() => setPlaying(true)}
-                    onPause={() => setPlaying(false)}
-                    onError={() => setFailed(true)}
+                    className={`absolute inset-0 size-full object-cover ${ready ? "" : "opacity-0"}`}
                 />
             </div>
-            {failed ? (
-                <p className={styles.filmStatus} role="status">
-                    영상 대신 사진을 표시하고 있어요.
-                </p>
-            ) : (
+            <div className="flex h-12 items-center justify-end bg-neutral-950 px-5 text-white sm:px-8 lg:px-16">
+                {failed && (
+                    <span role="status" className="sr-only">
+                        영상 대신 첫 장면 사진을 표시합니다.
+                    </span>
+                )}
                 <button
                     type="button"
                     aria-controls="tilde-film"
-                    aria-label={playing ? "틸드 소개 영상 일시정지" : "틸드 소개 영상 재생"}
-                    title={playing ? "영상 일시정지" : "영상 재생"}
+                    aria-label={controlLabel}
                     onClick={togglePlayback}
-                    className={styles.playback}
+                    className="grid size-11 cursor-pointer place-items-center rounded-full text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-white [@media(scripting:none)]:hidden"
                 >
                     <svg
-                        width="14"
-                        height="14"
+                        width="15"
+                        height="15"
                         viewBox="0 0 16 16"
                         fill="currentColor"
                         aria-hidden="true"
@@ -93,7 +63,7 @@ export default function TildeHeroFilm() {
                         )}
                     </svg>
                 </button>
-            )}
-        </>
+            </div>
+        </figure>
     );
 }

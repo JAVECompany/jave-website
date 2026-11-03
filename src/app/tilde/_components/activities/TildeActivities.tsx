@@ -9,10 +9,10 @@ export default function TildeActivities() {
         <ScrollScene className={styles.scene} pinned>
             <section className={styles.sticky} id="tilde-activities">
                 <div className={styles.visual}>
-                    <div className={styles.flash}>
+                    <div id="tilde-flash-preview" tabIndex={-1} className={styles.flash}>
                         <TildeFlashScreen />
                     </div>
-                    <div className={styles.club}>
+                    <div id="tilde-club-preview" tabIndex={-1} className={styles.club}>
                         <TildeClubScreen />
                     </div>
                     <span className={styles.caption}>

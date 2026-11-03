@@ -38,6 +38,10 @@
     transform: translateY(calc(var(--scroll-offset, 0px) * -1)) rotate(7deg);
     will-change: transform;
 }
+.flash:target,
+.club:target {
+    z-index: 3;
+}
 .caption {
     position: absolute;
     left: 0;
