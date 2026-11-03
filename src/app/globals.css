@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+html {
+    min-height: 100%;
+    width: 100%;
+    scroll-padding-top: 11rem;
+}
+
+body {
+    margin: 0;
+    background: #fafafa;
+    color: #171717;
+    font-family: Arial, "Malgun Gothic", sans-serif;
+    overflow-wrap: anywhere;
+}
+
+a:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    transform: translateY(-200%);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #171717;
+    color: white;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
