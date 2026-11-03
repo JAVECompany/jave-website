@@ -24,7 +24,7 @@ export default function TildeHeroFilm() {
                     <video
                         ref={filmRef}
                         id="tilde-film"
-                        aria-label="카페에서 처음 만난 두 사람부터 함께 뛰고 웃는 친구들까지, 틸드에서 시작하는 여러 만남을 담은 영상입니다."
+                        aria-label="함께 음악을 듣는 두 사람, 운동과 취미를 즐기는 모임, 바닷가에서 불꽃놀이를 보는 친구들을 담은 틸드 소개 영상입니다."
                         preload="none"
                         loop
                         muted
