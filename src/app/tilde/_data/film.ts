@@ -1,14 +1,8 @@
-export const portraitFilmQuery = "(max-aspect-ratio: 3/4)";
+export const smallFilmQuery = "(max-width: 1023px)";
 
-export const filmTiming = { mainSeconds: 33, endingSeconds: 6 };
-
-export const filmEditions = {
-    landscape: {
-        video: "/videos/tilde/encounters",
-        poster: "/images/tilde/photography/encounters-poster.webp",
-    },
-    portrait: {
-        video: "/videos/tilde/encounters-portrait",
-        poster: "/images/tilde/photography/encounters-portrait-poster.webp",
-    },
+export const filmSources = {
+    desktop: "/videos/tilde/encounters.mp4",
+    mobile: "/videos/tilde/encounters-mobile.mp4",
 };
+
+export const filmPoster = "/images/tilde/photography/encounters-poster.webp";

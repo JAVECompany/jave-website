@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { filmEditions, portraitFilmQuery } from "../../_data/film";
+import { filmPoster } from "../../_data/film";
 import { useTildeFilm } from "../../_hooks/use-tilde-film";
 
 export default function TildeHeroFilm() {
@@ -10,31 +10,31 @@ export default function TildeHeroFilm() {
 
     return (
         <figure>
-            <div className="relative h-[calc(100dvh-var(--inline-header-height)-3rem)] min-h-48 w-full bg-neutral-950">
-                <picture className="absolute inset-0 block">
-                    <source media={portraitFilmQuery} srcSet={filmEditions.portrait.poster} />
+            <div className="w-full bg-neutral-950">
+                <div className="relative mx-auto aspect-video w-full lg:max-w-[calc((100dvh-var(--inline-header-height)-3rem)*16/9)]">
                     <Image
-                        src={filmEditions.landscape.poster}
+                        src={filmPoster}
                         alt=""
                         fill
                         loading="eager"
                         fetchPriority="high"
                         sizes="100vw"
-                        className="object-cover"
+                        className="object-contain"
                     />
-                </picture>
-                <video
-                    ref={filmRef}
-                    id="tilde-film"
-                    aria-label="서로 다른 사람들과 나눈 일상의 만남 뒤로 강변에 핀 코스모스가 바람에 계속 흔들립니다."
-                    preload="none"
-                    muted
-                    playsInline
-                    disablePictureInPicture
-                    disableRemotePlayback
-                    hidden={failed}
-                    className={`absolute inset-0 size-full object-cover ${ready ? "" : "opacity-0"}`}
-                />
+                    <video
+                        ref={filmRef}
+                        id="tilde-film"
+                        aria-label="카페에서 처음 만난 두 사람부터 함께 뛰고 웃는 친구들까지, 틸드에서 시작하는 여러 만남을 담은 영상입니다."
+                        preload="none"
+                        loop
+                        muted
+                        playsInline
+                        disablePictureInPicture
+                        disableRemotePlayback
+                        hidden={failed}
+                        className={`absolute inset-0 size-full object-contain ${ready ? "" : "opacity-0"}`}
+                    />
+                </div>
             </div>
             <div className="flex h-12 items-center justify-end bg-neutral-950 px-5 text-white sm:px-8 lg:px-16">
                 {failed && (

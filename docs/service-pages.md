@@ -70,10 +70,9 @@ public/
 
 ## 스크롤 효과와 접근성
 
-- 틸드 첫 화면은 33초 무음 본편을 한 번 재생한 뒤 마지막 강변의 코스모스 6초만 반복합니다. 스크롤 위치는 재생 시간에 영향을 주지 않습니다. 메뉴, 재생 버튼과 서비스 문구는 영상 바깥에 있습니다.
-- `TildeHeroFilm`은 `public/videos/tilde/encounters-stream.mp4`의 마지막 MP4 조각을 같은 영상 요소에 미리 이어 붙입니다. 마지막 조각은 33초의 키프레임에서 시작해 6초간 이어집니다. MediaSource를 지원하지 않는 브라우저는 본편과 꽃 두 주기가 이어진 `public/videos/tilde/encounters.mp4`를 재생하고, 45초에 다다르면 33초로 돌아갑니다. 두 판의 공통 시간은 `src/app/tilde/_data/film.ts`에 있습니다.
-- 화면 가로세로 비율이 3:4 이하면 장면별로 구도를 조정한 세로판(`encounters-portrait-stream.mp4`, `encounters-portrait.mp4`)을 처음 재생할 때 선택합니다. 재생 중 기기를 회전해도 장면은 이어집니다. 각 첫 프레임 포스터는 `public/images/tilde/photography/encounters-poster.webp`와 `encounters-portrait-poster.webp`입니다.
-- 동작 줄이기를 설정하면 화면 비율에 맞는 포스터를 유지하고, 방문자가 재생을 누르면 영상을 불러옵니다. 영상 아래 버튼으로 일시정지하거나 이어 볼 수 있습니다.
+- 틸드 첫 화면은 36초 무음 영상을 자동 재생합니다. 마지막 인물 장면에서 첫 카페 장면으로 돌아가 전체 영상을 반복합니다. 메뉴, 재생 버튼과 서비스 문구는 영상 바깥에 있으며 스크롤 위치는 재생 시간에 영향을 주지 않습니다.
+- 가로·세로·울트라와이드 화면 모두 영상과 포스터의 16:9 구도 전체를 표시합니다. 가로 1023px 이하에서는 `public/videos/tilde/encounters-mobile.mp4`(1280×720), 그 밖에는 `public/videos/tilde/encounters.mp4`(1920×1080)를 불러옵니다. 파일은 재생 시작 시 한 번 선택해 기기를 회전해도 장면이 이어집니다. 공통 첫 프레임은 `public/images/tilde/photography/encounters-poster.webp`입니다.
+- 동작 줄이기를 설정하면 첫 장면의 포스터를 유지하고, 방문자가 재생을 누르면 영상을 불러옵니다. 영상 아래 버튼으로 일시정지하거나 이어 볼 수 있습니다.
 
 - `ScrollReveal`: 화면 진입 시 콘텐츠를 한 번 부드럽게 표시합니다. 처음부터 화면에 있는 콘텐츠와 JavaScript를 실행하지 않는 환경에서는 본문을 숨기지 않습니다.
 - `ScrollScene`: `requestAnimationFrame`으로 스크롤 진행률을 CSS 변수에 전달해 휴대폰과 사진을 천천히 이동합니다. React 상태를 매 프레임 갱신하지 않으며 화면 밖에서는 업데이트를 줄입니다.

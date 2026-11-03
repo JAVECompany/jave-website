@@ -1,30 +1,21 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { attachEncountersFilm } from "../_lib/attach-encounters-film";
+import { useEffect, useRef, useState } from "react";
+import { filmSources, smallFilmQuery } from "../_data/film";
+
+function playFilm(film: HTMLVideoElement) {
+    if (!film.hasAttribute("src")) {
+        const smallScreen = window.matchMedia(smallFilmQuery).matches;
+        film.src = smallScreen ? filmSources.mobile : filmSources.desktop;
+    } else if (film.error) {
+        film.load();
+    }
+    void film.play().catch(() => {});
+}
 
 export function useTildeFilm() {
     const filmRef = useRef<HTMLVideoElement>(null);
-    const detach = useRef<(() => void) | null>(null);
-    const wantsPlayback = useRef(false);
     const [playing, setPlaying] = useState(false);
     const [ready, setReady] = useState(false);
     const [failed, setFailed] = useState(false);
-
-    const start = useCallback(() => {
-        const film = filmRef.current;
-        if (!film) return;
-        wantsPlayback.current = true;
-        function resumeIfRequested() {
-            if (wantsPlayback.current) void film.play().catch(() => {});
-        }
-        if (!detach.current) {
-            detach.current = attachEncountersFilm(film, resumeIfRequested, () => {
-                wantsPlayback.current = false;
-                setPlaying(false);
-                setFailed(true);
-            });
-        }
-        resumeIfRequested();
-    }, []);
 
     useEffect(() => {
         const film = filmRef.current;
@@ -33,42 +24,40 @@ export function useTildeFilm() {
         const controller = new AbortController();
         const { signal } = controller;
         film.addEventListener("play", () => setPlaying(true), { signal });
-        film.addEventListener("loadeddata", () => setReady(true), { signal });
         film.addEventListener("pause", () => setPlaying(false), { signal });
-        motion.addEventListener(
-            "change",
+        film.addEventListener("loadeddata", () => setReady(true), { signal });
+        film.addEventListener(
+            "error",
             () => {
-                if (motion.matches) {
-                    wantsPlayback.current = false;
-                    film.pause();
-                }
+                setPlaying(false);
+                setReady(false);
+                setFailed(true);
             },
             { signal },
         );
-        if (!motion.matches) start();
+        motion.addEventListener(
+            "change",
+            () => {
+                if (motion.matches) film.pause();
+            },
+            { signal },
+        );
+        if (!motion.matches) playFilm(film);
         return () => {
             controller.abort();
-            wantsPlayback.current = false;
-            detach.current?.();
-            detach.current = null;
+            film.pause();
         };
-    }, [start]);
+    }, []);
 
     function togglePlayback() {
         const film = filmRef.current;
         if (!film) return;
-        if (!film.paused) {
-            wantsPlayback.current = false;
+        if (!film.paused && !failed) {
             film.pause();
-            return;
-        }
-        if (failed) {
-            detach.current?.();
-            detach.current = null;
+        } else {
             setFailed(false);
-            setReady(false);
+            playFilm(film);
         }
-        start();
     }
 
     return { filmRef, playing, ready, failed, togglePlayback };
