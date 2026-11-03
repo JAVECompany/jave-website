@@ -15,21 +15,21 @@ Next.js 서버를 상시 실행할 필요가 없습니다. 소스나 콘텐츠�
 
 개발 규칙은 [AGENTS.md](../AGENTS.md), 현재 전체 폴더 구조는 [README](../README.md#폴더-구조)를 참고합니다. 아래는 현재 소스에 적용한 배치 기준입니다.
 
-| 수정 대상 | 위치 및 역할 |
-| --- | --- |
-| 라우트 진입점 | `src/app/page.tsx`, `src/app/<route>/page.tsx` — 메타데이터와 컴포넌트 조합 |
-| 소개 페이지 전용 UI | `src/app/_components/<용도>/<Component>.tsx` |
-| 틸드·어썸·문의 전용 UI | `src/app/tilde/_components/`, `src/app/awesome/_components/`, `src/app/contact/_components/` 아래 용도별 폴더 |
-| 통합 약관·상세 화면 | `src/app/policy/page.tsx`, `src/app/policy/[slug]/page.tsx` |
-| 약관 전용 UI·본문 | `src/app/policy/_components/`, `src/app/policy/_data/policy-content.ts` |
-| 공통 약관 항목 | `src/data/policies.ts` — 푸터 링크와 약관 구분 메뉴에서 공유 |
-| 공통 UI | `src/components/<용도>/<Component>.tsx` 또는 역할을 더 나눈 하위 폴더 — 여러 라우트와 공통 레이아웃에서 공유 |
-| 공통 레이아웃 조합 | `src/app/layout.tsx` — 공통 헤더·본문·푸터 |
-| 공통 콘텐츠·설정 | `src/data/` |
-| 라우트 전용 데이터·로직 | 해당 라우트의 `_data/`, `_hooks/`, `_lib/`, `_types/` — 필요할 때 생성 |
-| 실제 공통 훅·유틸리티·타입 | `src/hooks/`, `src/lib/`, `src/types/` — 필요할 때 생성 |
-| 정적 자산 | `public/images/`, `public/fonts/` |
-| 배포 결과물 | `out/` — 빌드로 생성하며 직접 수정하지 않음 |
+| 수정 대상                  | 위치 및 역할                                                                                                  |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 라우트 진입점              | `src/app/page.tsx`, `src/app/<route>/page.tsx` — 메타데이터와 컴포넌트 조합                                   |
+| 소개 페이지 전용 UI        | `src/app/_components/<용도>/<Component>.tsx`                                                                  |
+| 틸드·어썸·문의 전용 UI     | `src/app/tilde/_components/`, `src/app/awesome/_components/`, `src/app/contact/_components/` 아래 용도별 폴더 |
+| 통합 약관·상세 화면        | `src/app/policy/page.tsx`, `src/app/policy/[slug]/page.tsx`                                                   |
+| 약관 전용 UI·본문          | `src/app/policy/_components/`, `src/app/policy/_data/policy-content.ts`                                       |
+| 공통 약관 항목             | `src/data/policies.ts` — 푸터 링크와 약관 구분 메뉴에서 공유                                                  |
+| 공통 UI                    | `src/components/<용도>/<Component>.tsx` 또는 역할을 더 나눈 하위 폴더 — 여러 라우트와 공통 레이아웃에서 공유  |
+| 공통 레이아웃 조합         | `src/app/layout.tsx` — 공통 헤더·본문·푸터                                                                    |
+| 공통 콘텐츠·설정           | `src/data/`                                                                                                   |
+| 라우트 전용 데이터·로직    | 해당 라우트의 `_data/`, `_hooks/`, `_lib/`, `_types/` — 필요할 때 생성                                        |
+| 실제 공통 훅·유틸리티·타입 | `src/hooks/`, `src/lib/`, `src/types/` — 필요할 때 생성                                                       |
+| 정적 자산                  | `public/images/`, `public/fonts/`                                                                             |
+| 배포 결과물                | `out/` — 빌드로 생성하며 직접 수정하지 않음                                                                   |
 
 SRP와 컴포넌트 하나당 파일 하나 원칙을 지킵니다. 특정 라우트에서만 쓰는 UI를 `src/components/`에 두거나 다른 라우트의 `_components/`를 직접 가져오지 않습니다. 여러 라우트에서 실제로 필요해질 때 공통 컴포넌트로 추출합니다.
 
@@ -56,18 +56,33 @@ npm run dev
 
 [로컬 개발 페이지](http://localhost:3000)에서 확인합니다. 포트가 사용 중이면 터미널에 표시된 실제 주소를 사용합니다.
 
-| 페이지 | 경로 |
-| --- | --- |
-| 소개 | `/` |
-| 틸드 | `/tilde/` |
-| 어썸 | `/awesome/` |
-| 문의 | `/contact/` |
-| 통합 약관 · 기본 이용약관 | `/policy/` |
-| 약관별 상세 | `/policy/terms/`, `/policy/location/`, `/policy/privacy/`, `/policy/operation/`, `/policy/brand/`, `/policy/rights/` |
+| 페이지                    | 경로                                                                                                                 |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| 소개                      | `/`                                                                                                                  |
+| 틸드                      | `/tilde/`                                                                                                            |
+| 어썸                      | `/awesome/`                                                                                                          |
+| 문의                      | `/contact/`                                                                                                          |
+| 통합 약관 · 기본 이용약관 | `/policy/`                                                                                                           |
+| 약관별 상세               | `/policy/terms/`, `/policy/location/`, `/policy/privacy/`, `/policy/operation/`, `/policy/brand/`, `/policy/rights/` |
 
 중앙 floating bar, 우측 문의 버튼, 공통 푸터와 페이지별 본문을 확인합니다. 서버는 `Ctrl+C`로 종료합니다.
 
 ## 3. 코드 검사와 정적 빌드
+
+### Prettier 포맷 적용
+
+```powershell
+npm run format
+npm run format:check
+```
+
+`format`은 프로젝트 소스와 문서의 줄바꿈·들여쓰기를 정리하고, `format:check`는 파일 변경 없이 형식을 검사합니다. 설정은 `.prettierrc.json`을 사용하며 코드·CSS는 4칸, JSON·Markdown은 2칸 들여쓰기를 적용합니다. CSS 선택자·속성·미디어 쿼리는 압축하지 않고 여러 줄로 작성합니다.
+
+`.prettierignore`는 빌드 결과물, 잠금 파일, 원본 이미지·폰트, 자동 추출한 `src/app/service-fonts.css`를 제외합니다. IDE의 Prettier 경로를 프로젝트의 `node_modules/prettier`로 지정하면 같은 설정을 사용할 수 있습니다.
+
+서비스 화면의 이미지 출처와 컴포넌트 구조, Tailwind와 CSS Modules의 사용 범위는 [서비스 페이지 가이드](service-pages.md)를 참고합니다.
+
+### 코드·타입 검사 및 빌드
 
 ```powershell
 npm run lint
@@ -171,12 +186,12 @@ npx wrangler@latest pages deploy out --project-name jave-website --branch main
 ## 8. 배포 확인 및 콘텐츠 준비
 
 - `/`, `/tilde/`, `/awesome/`, `/contact/`에 각각 직접 접속하고 새로고침합니다.
-- `/policy/`에서 이용약관이 기본 선택되는지, 6개 구분 메뉴와 푸터 링크가 각 `/policy/[slug]/`로 이동하는지 확인합니다. 상세 주소의 직접 접속·새로고침과 등록하지 않은 항목의 404도 확인합니다.
+- `/policy/`에서 이용약관이 기본 선택되는지, 7개 구분 메뉴와 푸터 링크가 각 `/policy/[slug]/`로 이동하는지 확인합니다. 상세 주소의 직접 접속·새로고침과 등록하지 않은 항목의 404도 확인합니다.
 - 모든 페이지에서 공통 메뉴·문의 버튼·푸터가 표시되고 활성 메뉴가 바뀌는지 확인합니다.
 - 모바일에서 floating bar와 문의 버튼이 겹치지 않는지 확인합니다.
 - 이미지·CSS·JavaScript 파일이 로드되는지, 존재하지 않는 경로가 404로 표시되는지 확인합니다.
 - 실제 공개 전 자리표시자 문구와 연락처를 확정하고, 파비콘·공유 이미지·회사 정보를 반영합니다.
-- 약관 본문은 현재 준비 중 상태입니다. 실제 운영 전에 `src/app/policy/_data/policy-content.ts`의 내용을 확정합니다.
+- 약관 본문은 출시 전 검토용 초안입니다. 실제 운영 전에 `src/app/policy/_data/documents/`의 내용, 사업자·담당자·연락처·처리 내역·시행일을 확정합니다. 적용 조건과 공식 출처는 [약관 작성 가이드](policies.md)를 참고합니다.
 - 도메인 확정 후 현재 빈 `public/robots.txt`, `public/sitemap.xml`을 작성하고 메타데이터도 검토합니다.
 
 사용자 지정 도메인은 Pages 프로젝트의 **Custom domains**에서 추가합니다. DNS 설정은 대시보드 안내를 따릅니다. [사용자 지정 도메인 공식 문서](https://developers.cloudflare.com/pages/configuration/custom-domains/)

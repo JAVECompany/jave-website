@@ -1,0 +1,311 @@
+.discover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 13px 16px;
+    font-size: 3.5cqw;
+    background: #fbf8f5;
+    color: #182033;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: "Noto Serif KR", serif;
+    font-size: 6cqw;
+    font-weight: 600;
+}
+.brand img {
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+}
+.menuIcon {
+    margin-left: auto;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #9a8d82;
+}
+.stories {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 18px 0;
+}
+.stories > div {
+    text-align: center;
+}
+.storyAvatar {
+    display: flex;
+    width: 12cqw;
+    height: 12cqw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #d6bda3;
+    background: linear-gradient(150deg, #f5e8db, #dbc8b3);
+    font-size: 4cqw;
+    color: #91745b;
+}
+.stories small {
+    display: block;
+    font-size: 2.8cqw;
+    margin-top: 5px;
+    color: #80766e;
+}
+.sectionLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 11px;
+}
+.sectionLabel strong {
+    font-size: 4.5cqw;
+}
+.sectionLabel span {
+    font-size: 2.8cqw;
+    color: #9a8d82;
+}
+.profile {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+.profilePhoto {
+    position: relative;
+    flex: 1;
+    min-height: 90px;
+}
+.profilePhoto img {
+    object-fit: cover;
+    object-position: center 35%;
+}
+.photoBadge {
+    position: absolute;
+    bottom: 9px;
+    left: 9px;
+    background: #fff9e9e8;
+    border-radius: 99px;
+    padding: 5px 8px;
+    font-size: 2.6cqw;
+    color: #634d36;
+}
+.profileCopy {
+    padding: 14px 12px 12px;
+}
+.profileCopy strong {
+    font-family: "Noto Serif KR", serif;
+    font-size: 5.7cqw;
+}
+.profileCopy strong span {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 4cqw;
+    font-weight: 400;
+    margin-left: 5px;
+}
+.profileCopy small {
+    display: block;
+    font-size: 3cqw;
+    color: #a08873;
+    margin-top: 5px;
+}
+.profileCopy p {
+    font-size: 3.3cqw;
+    line-height: 1.7;
+    margin: 10px 0 14px;
+    color: #68636a;
+}
+.sendLetter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #182033;
+    color: #fff5e8;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 3.5cqw;
+}
+.sendLetter span {
+    font-size: 4cqw;
+    color: #d7b590;
+}
+.tabBar {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+    margin-top: 15px;
+    color: #a8a2a0;
+    font-size: 5.5cqw;
+    text-align: center;
+}
+.tabBar small {
+    display: block;
+    font-size: 2.6cqw;
+    margin-top: 3px;
+}
+.activeTab {
+    color: #182033;
+}
+.letterScreen {
+    height: 100%;
+    padding: 12px 15px 22px;
+    display: flex;
+    flex-direction: column;
+    background: #f2e9df;
+    color: #182033;
+    font-size: 3.3cqw;
+}
+.screenTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3.5cqw;
+}
+.screenTitle > span {
+    font-size: 6cqw;
+}
+.screenTitle > small {
+    font-size: 3cqw;
+    color: #99826a;
+}
+.letterPaper {
+    position: relative;
+    flex: 1;
+    background: #fffdf8;
+    margin: 20px 0 14px;
+    padding: 27px 21px 55px;
+    box-shadow: 0 4px 20px #5b42300a;
+    border: 1px solid #e9ddcf;
+}
+.letterOverline {
+    font-size: 2.3cqw;
+    letter-spacing: 0.17em;
+    color: #a88765;
+}
+.letterPaper h3 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 6.5cqw;
+    font-weight: 500;
+    margin: 24px 0 22px;
+}
+.letterPaper p {
+    font-family: "Noto Serif KR", serif;
+    font-size: 3.4cqw;
+    line-height: 2.05;
+    color: #675b51;
+    margin: 0 0 16px;
+}
+.signature {
+    font-size: 3.2cqw;
+    color: #a88765;
+}
+.waxSeal {
+    position: absolute;
+    bottom: 17px;
+    right: 17px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #9e7855;
+    box-shadow: inset 0 0 0 3px #bc9876;
+    display: grid;
+    place-items: center;
+    font-family: serif;
+    font-size: 23px;
+    color: #f5e6d4;
+}
+.letterHint {
+    font-size: 2.9cqw;
+    line-height: 1.7;
+    text-align: center;
+    color: #99826a;
+    margin-bottom: 12px;
+}
+.invitationScreen {
+    height: 100%;
+    padding: 12px 15px 20px;
+    background: radial-gradient(ellipse at 70% 100%, #414556, #0e1428 75%);
+    color: #ede5d8;
+    display: flex;
+    flex-direction: column;
+}
+.invitationPaper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    min-height: 0;
+    border: 1px solid #c29a7466;
+    margin-top: 22px;
+    padding: 22px 9px;
+    position: relative;
+    background: #ffffff03;
+}
+.invitationPaper::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 1px solid #c29a7422;
+    pointer-events: none;
+}
+.invitationPaper img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    margin-bottom: 19px;
+    border-radius: 10px;
+}
+.invitationPaper > small {
+    font-size: 2.4cqw;
+    letter-spacing: 0.15em;
+    color: #c29a74;
+}
+.invitationPaper h3 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 6.5cqw;
+    line-height: 1.65;
+    font-weight: 400;
+    margin: 19px 0 0;
+}
+.invitationRule {
+    width: 27px;
+    height: 1px;
+    background: #c29a74;
+    margin: 24px 0;
+}
+.invitationPaper > p {
+    font-size: 3.5cqw;
+    color: #dec4a8;
+}
+.invitationPaper > strong {
+    font-size: 4.3cqw;
+    font-weight: 400;
+    margin: 12px 0 6px;
+}
+.invitationPaper > span {
+    font-size: 2.8cqw;
+    color: #b7afa8;
+}
+.invitationNames {
+    font-family: "Noto Serif KR", serif;
+    font-size: 6cqw;
+    margin: 27px 0 26px;
+}
+.invitationNames i {
+    font-size: 4cqw;
+    color: #c29a74;
+    margin: 0 14px;
+}
+.invitationHint {
+    font-size: 3cqw;
+    text-align: center;
+    color: #c5bcb3;
+    line-height: 1.8;
+    margin-top: 16px;
+}

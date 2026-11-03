@@ -1,0 +1,15 @@
+{
+  "printWidth": 100,
+  "tabWidth": 4,
+  "useTabs": false,
+  "singleQuote": false,
+  "semi": true,
+  "trailingComma": "all",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": ["*.json", "*.jsonc", "*.md", "*.yml", "*.yaml"],
+      "options": { "tabWidth": 2 }
+    }
+  ]
+}

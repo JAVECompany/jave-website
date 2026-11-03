@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+coverage/
+.idea/
+.vscode/
+package-lock.json
+next-env.d.ts
+*.tsbuildinfo
+public/
+src/app/service-fonts.css

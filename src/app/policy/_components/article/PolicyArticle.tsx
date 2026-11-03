@@ -1,5 +1,9 @@
 import { company } from "../../../../data/company";
 import type { PolicyDocument } from "../../_types/policy";
+import PolicyDraftNotice from "../notice/PolicyDraftNotice";
+import PolicyContents from "../contents/PolicyContents";
+import PolicyDocumentSection from "../section/PolicyDocumentSection";
+import PolicyReferences from "../references/PolicyReferences";
 
 type PolicyArticleProps = {
     policy: PolicyDocument;
@@ -9,16 +13,26 @@ export default function PolicyArticle({ policy }: PolicyArticleProps) {
     return (
         <article aria-labelledby="policy-title" className="mt-12 sm:mt-20">
             <div className="border-b border-neutral-700 pb-6 sm:pb-8">
-                <h1 id="policy-title" className="text-2xl leading-snug font-semibold tracking-tight sm:text-3xl">
+                <p className="mb-3 text-xs leading-6 text-neutral-500">{policy.scope}</p>
+                <h1
+                    id="policy-title"
+                    className="text-2xl leading-snug font-semibold tracking-tight sm:text-3xl"
+                >
                     {company.name} {policy.label}
                 </h1>
             </div>
-            <div className="mt-8 space-y-6 sm:mt-12">
-                <p className="text-sm leading-8 text-neutral-700 sm:text-base">{policy.description}</p>
-                <section aria-labelledby="policy-status-title" className="border border-neutral-200 bg-neutral-100 px-5 py-6 sm:px-8 sm:py-8">
-                    <h2 id="policy-status-title" className="text-sm font-semibold text-neutral-900">준비 중</h2>
-                    <p className="mt-3 max-w-prose text-sm leading-8 whitespace-pre-line text-neutral-600">{policy.body}</p>
-                </section>
+            <div className="mt-8 sm:mt-12">
+                <p className="max-w-4xl text-sm leading-8 break-keep text-neutral-700 sm:text-base">
+                    {policy.description}
+                </p>
+                <PolicyDraftNotice reviewNeeded={policy.reviewNeeded} />
+                <PolicyContents sections={policy.sections} />
+                <div className="mt-10 divide-y divide-neutral-200 sm:mt-14">
+                    {policy.sections.map((section) => (
+                        <PolicyDocumentSection key={section.id} section={section} />
+                    ))}
+                </div>
+                <PolicyReferences references={policy.references} />
             </div>
         </article>
     );

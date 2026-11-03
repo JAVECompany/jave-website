@@ -13,19 +13,23 @@ export const metadata: Metadata = {
     description: company.description,
 };
 
-export default function RootLayout({ children }: {
-    children: ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="ko">
-        <body className="flex min-h-dvh w-full min-w-0 flex-col">
-            <a href="#main-content" className="skip-link">본문으로 바로가기</a>
-            <Header />
-            <main id="main-content" tabIndex={-1} className="w-full min-w-0 flex-1 px-5 pt-44 pb-16 sm:px-8 sm:pt-40 sm:pb-24 lg:px-16">
-                {children}
-            </main>
-            <Footer />
-        </body>
+            <body className="flex min-h-dvh w-full min-w-0 flex-col">
+                <a href="#main-content" className="skip-link">
+                    본문으로 바로가기
+                </a>
+                <Header />
+                <main
+                    id="main-content"
+                    tabIndex={-1}
+                    className="w-full min-w-0 flex-1 px-5 pt-44 pb-16 sm:px-8 sm:pt-40 sm:pb-24 lg:px-16"
+                >
+                    {children}
+                </main>
+                <Footer />
+            </body>
         </html>
     );
 }

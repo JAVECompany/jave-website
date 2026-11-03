@@ -10,7 +10,7 @@ export default function PolicyNavigation({ selectedSlug }: PolicyNavigationProps
     return (
         <nav aria-label="약관 구분">
             <p className="mb-3 text-xs font-medium text-neutral-500">구분</p>
-            <ul className="grid grid-cols-2 border-t border-l border-neutral-300 md:grid-cols-3 xl:auto-cols-fr xl:grid-flow-col xl:grid-cols-none">
+            <ul className="grid grid-cols-2 border-t border-l border-neutral-300 md:grid-cols-3 xl:grid-cols-4 2xl:auto-cols-fr 2xl:grid-flow-col 2xl:grid-cols-none">
                 {policyItems.map(({ slug, label }) => (
                     <li key={slug} className="min-w-0 border-r border-b border-neutral-300">
                         <Link

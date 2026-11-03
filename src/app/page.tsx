@@ -8,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function CompanyPage() {
-    return <><HeroSection /><CompanySection /></>;
+    return (
+        <>
+            <HeroSection />
+            <CompanySection />
+        </>
+    );
 }

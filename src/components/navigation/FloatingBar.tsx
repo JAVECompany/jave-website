@@ -3,7 +3,10 @@ import NavigationLink from "./NavigationLink";
 
 export default function FloatingBar() {
     return (
-        <nav aria-label="주요 메뉴" className="pointer-events-auto absolute top-22 left-1/2 flex -translate-x-1/2 gap-1 rounded-full border border-black/10 bg-white/95 p-1.5 shadow-sm backdrop-blur sm:top-6">
+        <nav
+            aria-label="주요 메뉴"
+            className="pointer-events-auto absolute top-22 left-1/2 flex -translate-x-1/2 gap-1 rounded-full border border-black/10 bg-white/95 p-1.5 shadow-sm backdrop-blur sm:top-6"
+        >
             {navigation.map(({ label, href }) => (
                 <NavigationLink
                     key={href}

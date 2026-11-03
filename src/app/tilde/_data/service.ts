@@ -1,4 +1,36 @@
 export const tildeService = {
     name: "틸드",
-    description: "틸드 서비스 소개와 주요 특징, 관련 이미지를 추가할 예정입니다.",
+    description:
+        "취향이 닮은 사람들이 만남, 번개모임, 동아리로 자연스럽게 이어지는 출시 준비 중인 소셜 서비스입니다.",
+    tagline: "취향이 닮아,\n일상이 이어지다.",
+    heroDescription:
+        "한 번의 대화부터, 가벼운 번개와 오래가는 동아리까지.\n나와 닮은 취향, 함께할 새로운 일상을 만나보세요.",
+    ctaTitle: "취향이 닮은 우리,\n곧 일상에서 만나요.",
 };
+
+export const tildeConnections = [
+    {
+        label: "MEET",
+        title: "이야기로 가까워지는 만남",
+        description: "사진 너머의 취향과 질문에서, 마음에 남는 첫 대화를 발견해요.",
+        image: "/images/tilde/photography/portrait-woman.webp",
+        alt: "틸드 프로필 시안에 사용된 가상 인물 이미지",
+        href: "#tilde-mode",
+    },
+    {
+        label: "MOMENT",
+        title: "오늘의 가벼운 번개",
+        description: "책 한 권, 퇴근 후 산책. 오늘 시간이 맞는 사람들과 작은 약속을 만들어요.",
+        image: "/images/tilde/photography/reading.webp",
+        alt: "함께 책을 읽는 편안한 취미 모임의 예시 사진",
+        href: "#tilde-activities",
+    },
+    {
+        label: "TOGETHER",
+        title: "취향을 쌓아가는 동아리",
+        description: "같은 취미로 자주 만나다 보면, 어느새 일상의 익숙한 얼굴이 돼요.",
+        image: "/images/tilde/photography/football.webp",
+        alt: "함께 운동하는 풋살 동아리의 예시 사진",
+        href: "#tilde-activities",
+    },
+];

@@ -1,0 +1,53 @@
+{
+  "app_name": "틸드",
+  "english_name": "TILDE",
+  "company": "주식회사 JYC(임시)",
+  "tagline": "취향이 닮아, 일상이 이어지다.",
+  "story": [
+    "틸드(TILDE)는 물결표에서 시작한 소셜 커뮤니티입니다.",
+    "닮은 취향을 발견하고, 함께할 약속을 만들고, 일상 속 관계로 이어갑니다.",
+    "한 번의 대화부터 가벼운 번개, 꾸준히 만나는 동아리까지.",
+    "틸드는 취향이 사람 사이의 연결이 되는 곳입니다."
+  ],
+  "brand_interpretations": [
+    [
+      "하나로 이어진 물결",
+      "대화·모임·동아리로 이어지는 관계의 흐름"
+    ],
+    [
+      "서로 다른 높낮이",
+      "각자의 개성과 생활 리듬을 존중하는 만남"
+    ],
+    [
+      "물결 안의 밝은 틈",
+      "새로운 사람을 만나 일상에 생기는 작은 반짝임"
+    ],
+    [
+      "올리브와 오트 색감",
+      "편안하게 다가가고 오래 머물 수 있는 분위기"
+    ]
+  ],
+  "colors": {
+    "accent": "#465543",
+    "bg": "#F5F3EB",
+    "surface": "#FFFEF9",
+    "tint": "#DCE4D1",
+    "ink": "#2E2E2E",
+    "muted": "#606859",
+    "line": "#D4DAC9",
+    "danger": "#854C35",
+    "danger-bg": "#F2E8DE",
+    "overlay": "#2E2E2E66",
+    "shadow": "#46554314"
+  },
+  "symbol_source": "approved-reference.png",
+  "source_sha256": "92fb1a77b51ad7b222e14d85b43af70e59d21a1d48885bb31b2c63e480cb1c5d",
+  "source_viewport": [
+    110,
+    380,
+    1040,
+    280
+  ],
+  "preservation": "Original raster is embedded and clipped for composition. Symbol pixels are not redrawn or recolored. SVG is a raster wrapper, not a vector tracing.",
+  "reference_note": "The archived reference contains the former wordmark. Only its wave viewport is used by current materials."
+}

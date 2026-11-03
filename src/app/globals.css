@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./service-fonts.css";
 
 html {
     min-height: 100%;
@@ -10,7 +11,7 @@ body {
     margin: 0;
     background: #fafafa;
     color: #171717;
-    font-family: Arial, "Malgun Gothic", sans-serif;
+    font-family: "Pretendard Variable", "Malgun Gothic", sans-serif;
     overflow-wrap: anywhere;
 }
 
@@ -33,4 +34,10 @@ a:focus-visible {
 
 .skip-link:focus {
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }

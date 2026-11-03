@@ -60,13 +60,17 @@ src/
 │   ├── tilde/
 │   │   ├── page.tsx
 │   │   └── _components/
-│   │       └── service-intro/
-│   │           └── TildeSection.tsx
+│   │       ├── hero/
+│   │       │   └── TildeHero.tsx
+│   │       └── app-preview/
+│   │           └── TildeMatchScreen.tsx
 │   ├── awesome/
 │   │   ├── page.tsx
 │   │   └── _components/
-│   │       └── service-intro/
-│   │           └── AwesomeSection.tsx
+│   │       ├── hero/
+│   │       │   └── AwesomeHero.tsx
+│   │       └── app-preview/
+│   │           └── AwesomeDiscoverScreen.tsx
 │   └── contact/
 │       ├── page.tsx
 │       └── _components/
@@ -93,7 +97,8 @@ src/
 - 루트 `layout.tsx`는 문서 구조, 전역 스타일 연결, 공통 헤더·본문·푸터 구성을 담당한다. 특정 페이지의 세부 내용을 포함하지 않는다.
 - 페이지 전용 컴포넌트는 공통 컴포넌트를 조합할 수 있다. 공통 컴포넌트는 라우트 구현을 알지 못하도록 작성한다.
 - 여러 화면에서 쓰는 회사 정보·내비게이션 등은 `src/data/`에서 관리한다.
-- 약관 항목·순서·경로 식별자는 푸터와 약관 화면이 공유하므로 `src/data/policies.ts`에서 관리하고, 실제 약관 설명·본문은 `src/app/policy/_data/policy-content.ts`에서 관리한다. 확정되지 않은 약관을 실제 운영 중인 문서처럼 작성하지 않는다.
+- 약관 항목·순서·경로 식별자는 푸터와 약관 화면이 공유하므로 `src/data/policies.ts`에서 관리한다. 실제 본문은 `src/app/policy/_data/documents/`에 문서별로 분리하고 `policy-content.ts`에서 연결한다. 공식 출처·초안 상태·기준일은 `policy-sources.ts`에서 관리한다.
+- 약관은 실제 기능과 개인정보 처리 내역을 기준으로 작성하고 공개 의무·가입 동의·조건부 적용·안전 운영 기준을 구분한다. 미정인 사업자·담당자·연락처·수탁자·요금·시행일을 지어내지 않으며 초안 표시는 확정 전까지 유지한다. 세부 작성 기준은 `docs/policies.md`를 참고한다.
 - 특정 라우트에서만 쓰는 데이터, 훅, 유틸리티, 타입이 필요하면 해당 라우트의 `_data/`, `_hooks/`, `_lib/`, `_types/`에 역할별로 분리한다. 필요할 때만 폴더를 만든다.
 - 실제로 공통으로 사용되는 훅·유틸리티·타입은 각각 `src/hooks/`, `src/lib/`, `src/types/`에 둔다. UI가 아닌 코드를 `components/`에 모으지 않는다.
 
@@ -107,6 +112,8 @@ src/
 - 클라이언트 기능 때문에 페이지 전체나 루트 레이아웃을 Client Component로 바꾸지 않는다.
 - 내부 라우트 이동에는 `next/link`를 사용한다. 링크 이동은 링크, 상태 변경이나 동작 실행은 버튼으로 구현한다.
 - 클래스와 스타일은 기존 Tailwind CSS 구성을 따른다. 전역 CSS에는 전역에 적용할 규칙만 작성한다.
+- 여백·정렬·색상·타이포그래피·반응형 배치는 Tailwind 클래스를 우선한다. CSS Modules는 앱 디자인 시안의 복잡한 내부 표현이나 스크롤 변수와 연동되는 시각 효과 등 필요한 범위에 한정한다.
+- CSS를 한 줄로 압축해서 작성하지 않는다. 선택자·속성·미디어 쿼리를 줄바꿈하고 프로젝트 Prettier 설정에 따라 들여쓴다. `npm run format`으로 정리하고 `npm run format:check`로 확인한다.
 - 비밀값을 소스나 공개 콘텐츠에 넣지 않는다. 회사 정보·서비스 기능·연락처 등 확인되지 않은 내용을 실제 사실처럼 작성하지 않는다.
 
 ## 공통 화면 및 반응형 규칙
@@ -124,7 +131,8 @@ src/
 - `output: "export"`, `trailingSlash: true`와 현재 정적 이미지 처리 구성을 유지한다.
 - 요청마다 실행되는 서버 기능, 인증 서버, Server Actions, ISR, 서버 전용 문의 처리를 정적 페이지 작업에 임의로 추가하지 않는다.
 - 패키지 관리는 npm과 `package-lock.json`으로 통일한다. 현재 TypeScript 6.0 및 Webpack 설정의 호환성을 고려한다.
-- 소스 변경 후 영향에 맞게 `npm run lint`, `npm run typecheck`, `npm run build`로 검증한다. 문서만 변경한 경우 내용·경로·링크와 `git diff --check`를 확인한다.
+- 린트·타입검사·빌드·테스트는 사용자가 명시적으로 요청한 경우에만 실행한다. 소스 변경 후에도 자동으로 실행하지 않는다. 실행 방법을 문서에 안내하는 것은 가능하지만 안내를 실행 승인으로 간주하지 않는다.
+- 문서를 변경하면 내용·경로·링크를 확인한다.
 - 폴더나 파일을 이동하면 모든 import 경로와 관련 문서를 함께 수정한다.
 - UI 변경 시 모바일·태블릿·데스크톱에서 메뉴 겹침, 가로 넘침, 콘텐츠 잘림, 푸터 배치를 확인한다.
 - `node_modules/`, `.next/`, `out/` 등 생성물은 직접 수정하거나 커밋하지 않는다.
