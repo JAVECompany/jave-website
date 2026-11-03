@@ -1,0 +1,127 @@
+.section {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    align-items: center;
+    gap: clamp(40px, 6vw, 120px);
+    padding: 85px clamp(25px, 6vw, 110px);
+    border-radius: 42px;
+    background: #f0e7dc;
+    overflow: hidden;
+}
+.visual {
+    position: relative;
+    min-height: 690px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paper {
+    position: absolute;
+    width: 300px;
+    height: 490px;
+    background: #fcf6ec;
+    border: 1px solid #ddcbb4;
+    transform: rotate(-13deg) translate(-40px, 10px);
+    box-shadow: 0 25px 50px #6f4d2420;
+}
+.paper::after {
+    content: "AWESOME";
+    position: absolute;
+    bottom: 45px;
+    left: 35px;
+    letter-spacing: 0.22em;
+    font-size: 10px;
+    color: #bea384;
+}
+.phone {
+    position: relative;
+    --device-width: 300px;
+    transform: rotate(5deg);
+}
+.label {
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: "Noto Serif KR", serif;
+    font-size: 13px;
+    color: #967c61;
+}
+.copy {
+    position: relative;
+}
+.details {
+    border-top: 1px solid #d7c9b9;
+    margin-top: 34px;
+}
+.details p {
+    display: flex;
+    gap: 19px;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.8;
+    padding: 16px 0;
+    border-bottom: 1px solid #d7c9b9;
+    color: #4b4642;
+}
+.details span {
+    font-size: 10px;
+    color: #9d7b58;
+    letter-spacing: 0.06em;
+}
+.note {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #9b8b7c;
+    margin-top: 25px;
+    word-break: keep-all;
+}
+.section > * {
+    min-width: 0;
+}
+@media (max-width: 1000px) {
+    .section {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 60px 40px;
+        gap: 60px;
+    }
+    .visual {
+        order: 2;
+        min-height: 670px;
+    }
+    .copy {
+        order: 1;
+    }
+    .copy > div {
+        max-width: 700px;
+    }
+}
+@media (max-width: 600px) {
+    .section {
+        border-radius: 28px;
+        padding: 40px 22px;
+        gap: 30px;
+    }
+    .visual {
+        min-height: 565px;
+    }
+    .phone {
+        --device-width: 245px;
+    }
+    .paper {
+        width: 230px;
+        height: 400px;
+        transform: rotate(-9deg) translate(-15px, 0);
+    }
+    .details p {
+        font-size: 12px;
+        gap: 13px;
+    }
+    .note {
+        font-size: 10px;
+    }
+    .label {
+        font-size: 11px;
+    }
+}

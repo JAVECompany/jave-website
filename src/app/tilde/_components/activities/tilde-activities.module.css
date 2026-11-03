@@ -1,0 +1,182 @@
+.scene {
+    position: relative;
+    min-height: 185svh;
+    margin-top: 120px;
+}
+.sticky {
+    position: sticky;
+    top: 105px;
+    min-height: calc(100svh - 125px);
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: clamp(35px, 5vw, 100px);
+    padding: 60px clamp(25px, 5vw, 90px);
+    background: #f0f0e7;
+    border-radius: 42px;
+    overflow: hidden;
+    scroll-margin-top: 110px;
+}
+.visual {
+    position: relative;
+    min-height: 690px;
+}
+.flash {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    --device-width: 265px;
+    transform: translateY(var(--scroll-offset, 0px)) rotate(-7deg);
+    will-change: transform;
+    z-index: 1;
+}
+.club {
+    position: absolute;
+    right: 0;
+    top: 68px;
+    --device-width: 255px;
+    transform: translateY(calc(var(--scroll-offset, 0px) * -1)) rotate(7deg);
+    will-change: transform;
+}
+.caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: #7b896a;
+}
+.copy {
+    position: relative;
+    z-index: 2;
+}
+.details {
+    margin-top: 32px;
+}
+.details > div {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 8px 15px;
+    border-top: 1px solid #d4dac9;
+    padding: 21px 0;
+}
+.details > div > span {
+    font-family: serif;
+    font-size: 23px;
+    color: #7b896a;
+    line-height: 1.2;
+}
+.details h3 {
+    font-size: 16px;
+    font-weight: 550;
+    color: #465543;
+    letter-spacing: -0.035em;
+}
+.details p {
+    grid-column: 2;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 34ch;
+    color: #606859;
+    word-break: keep-all;
+}
+.sticky > * {
+    min-width: 0;
+}
+@media (max-width: 1100px) {
+    .scene {
+        min-height: auto;
+        margin-top: 80px;
+    }
+    .sticky {
+        position: relative;
+        top: auto;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 55px 40px;
+        gap: 40px;
+    }
+    .copy {
+        order: 1;
+    }
+    .visual {
+        order: 2;
+        width: 100%;
+        max-width: 550px;
+        margin: auto;
+        min-height: 690px;
+    }
+}
+@media (max-width: 600px) {
+    .scene {
+        margin-top: 70px;
+    }
+    .sticky {
+        border-radius: 28px;
+        padding: 40px 23px;
+    }
+    .visual {
+        min-height: 555px;
+    }
+    .flash {
+        left: -6px;
+        --device-width: 212px;
+        top: 0;
+    }
+    .club {
+        right: -8px;
+        --device-width: 205px;
+        top: 55px;
+    }
+    .caption {
+        font-size: 7px;
+        bottom: -2px;
+    }
+    .details h3 {
+        font-size: 15px;
+    }
+    .details p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 360px) {
+    .visual {
+        min-height: 490px;
+    }
+    .flash {
+        --device-width: 180px;
+        left: -8px;
+    }
+    .club {
+        --device-width: 175px;
+        right: -10px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .scene {
+        min-height: auto;
+    }
+    .sticky {
+        position: relative;
+        top: auto;
+    }
+    .flash {
+        transform: rotate(-7deg);
+        will-change: auto;
+    }
+    .club {
+        transform: rotate(7deg);
+        will-change: auto;
+    }
+}
+
+@media (max-height: 850px) and (min-width: 1101px) {
+    .scene {
+        min-height: auto;
+    }
+    .sticky {
+        position: relative;
+        top: auto;
+    }
+}

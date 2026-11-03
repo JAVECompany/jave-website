@@ -1,0 +1,284 @@
+.app {
+    height: 100%;
+    padding: 11px 13px 17px;
+    display: flex;
+    flex-direction: column;
+    background: #f5f3eb;
+    color: #2e2e2e;
+    font-size: 3.4cqw;
+}
+.brand {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.brand img {
+    width: 31px;
+    height: 13px;
+    object-fit: cover;
+}
+.brand strong {
+    font-family: "Noto Serif KR", serif;
+    font-size: 5.8cqw;
+    font-weight: 500;
+}
+.brand > span {
+    margin-left: auto;
+    color: #465543;
+    font-size: 3.5cqw;
+}
+.titleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 17px;
+}
+.titleRow h3 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 7cqw;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.titleRow > span {
+    color: #465543;
+}
+.titleRow .toggle {
+    font-size: 2.8cqw;
+    background: #465543;
+    color: #f5f3eb;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.subtitle {
+    font-size: 3cqw;
+    color: #606859;
+    margin-top: 4px;
+    line-height: 1.7;
+}
+.chips {
+    display: flex;
+    gap: 6px;
+    margin: 13px 0;
+}
+.chips span {
+    padding: 5px 9px;
+    border-radius: 20px;
+    border: 1px solid #d4dac9;
+    background: #fffef9;
+    font-size: 2.7cqw;
+    color: #606859;
+}
+.chips span:first-child {
+    background: #dce4d1;
+    color: #465543;
+}
+.matchCard {
+    position: relative;
+    background: #fffef9;
+    border-radius: 17px;
+    overflow: hidden;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+.portrait {
+    position: relative;
+    flex: 1;
+    min-height: 90px;
+}
+.portrait img {
+    object-fit: cover;
+    object-position: center 25%;
+}
+.person {
+    padding: 13px 14px;
+}
+.person strong {
+    font-size: 5.2cqw;
+    font-weight: 600;
+}
+.person small {
+    display: block;
+    font-size: 2.8cqw;
+    color: #606859;
+    margin-top: 5px;
+}
+.person p {
+    font-family: "Noto Serif KR", serif;
+    font-size: 3.6cqw;
+    line-height: 1.8;
+    margin: 10px 0;
+    color: #465543;
+}
+.person > span {
+    display: inline-block;
+    background: #e8eadf;
+    color: #606859;
+    padding: 4px 7px;
+    margin-right: 5px;
+    border-radius: 6px;
+    font-size: 2.6cqw;
+}
+.pauseOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: #f5f3ebee;
+    backdrop-filter: blur(12px);
+    color: #465543;
+}
+.pauseOverlay > span {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #dce4d1;
+    font-size: 20px;
+    margin-bottom: 19px;
+}
+.pauseOverlay h3 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 6cqw;
+    font-weight: 500;
+}
+.pauseOverlay p {
+    font-size: 3.7cqw;
+    line-height: 1.8;
+    margin-top: 13px;
+}
+.pauseOverlay small {
+    font-size: 2.8cqw;
+    margin-top: 24px;
+    color: #606859;
+}
+.bottomNav {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 8px 0;
+    margin-top: auto;
+    color: #9ca28d;
+    text-align: center;
+    font-size: 5.4cqw;
+}
+.bottomNav small {
+    display: block;
+    font-size: 2.5cqw;
+    margin-top: 3px;
+}
+.bottomNav .selected {
+    color: #465543;
+    font-weight: 600;
+}
+.eventImage {
+    height: 32%;
+    min-height: 110px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.eventImage img {
+    object-fit: cover;
+}
+.eventImage > span {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: #fffef9e8;
+    border-radius: 20px;
+    padding: 4px 8px;
+    font-size: 2.8cqw;
+}
+.eventCopy {
+    padding: 15px 2px;
+}
+.eventCopy > small,
+.clubCopy > small {
+    font-size: 2.8cqw;
+    color: #7b896a;
+}
+.eventCopy h3 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 5.7cqw;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+.eventCopy p {
+    font-size: 3.1cqw;
+    color: #606859;
+    line-height: 1.8;
+}
+.eventCopy > div {
+    font-size: 2.9cqw;
+    color: #606859;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.eventMini {
+    border: 1px solid #d4dac9;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    padding: 12px 9px;
+    align-items: center;
+    background: #fffef9;
+}
+.eventMini > span:first-child {
+    font-size: 6cqw;
+}
+.eventMini > span:last-child {
+    margin-left: auto;
+}
+.eventMini strong {
+    font-size: 3.3cqw;
+    font-weight: 500;
+}
+.eventMini small {
+    display: block;
+    font-size: 2.6cqw;
+    color: #606859;
+    margin-top: 4px;
+}
+.clubCard {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fffef9;
+    margin-bottom: 10px;
+}
+.clubPhoto {
+    position: relative;
+    height: 100px;
+}
+.clubPhoto img {
+    object-fit: cover;
+}
+.shortPhoto {
+    height: 66px;
+}
+.clubCopy {
+    padding: 11px 12px;
+}
+.clubCopy h3 {
+    font-size: 4.4cqw;
+    font-family: "Noto Serif KR", serif;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 3px 0;
+}
+.clubCopy p,
+.clubCopy > span {
+    font-size: 2.8cqw;
+    color: #606859;
+    line-height: 1.7;
+}
+.clubCopy > span {
+    display: block;
+    margin-top: 8px;
+}
