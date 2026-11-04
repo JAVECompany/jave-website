@@ -36,6 +36,10 @@ body {
     overflow-wrap: anywhere;
 }
 
+body:has([data-tilde-page]) {
+    background: #fdfbf8;
+}
+
 a:focus-visible {
     outline: 2px solid #2563eb;
     outline-offset: 4px;
