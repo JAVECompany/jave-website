@@ -9,7 +9,7 @@ export default function TodayGallery() {
                 <StoryPhoto
                     photo={storyPhotos.todayDetail}
                     className="aspect-[16/9] rounded-[10px]! bg-[#d7cabb] sm:rounded-[14px]!"
-                    sizes="(min-width: 768px) 13vw, 23vw"
+                    sizes="(min-width: 768px) 17vw, 23vw"
                     framed
                 />
             </TildeReveal>
@@ -18,7 +18,7 @@ export default function TodayGallery() {
                     <StoryPhoto
                         photo={storyPhotos.todayWalk}
                         className="aspect-[16/9] bg-[#d8dfd2]"
-                        sizes="(min-width: 768px) 18vw, 31vw"
+                        sizes="(min-width: 768px) 23vw, 31vw"
                         framed
                     />
                 </TildeReveal>
@@ -26,7 +26,7 @@ export default function TodayGallery() {
                     <StoryPhoto
                         photo={storyPhotos.todayCoffee}
                         className="aspect-[16/9] bg-[#e4dace]"
-                        sizes="(min-width: 768px) 15vw, 25vw"
+                        sizes="(min-width: 768px) 19vw, 25vw"
                         framed
                     />
                 </TildeReveal>
@@ -35,7 +35,7 @@ export default function TodayGallery() {
                 <StoryPhoto
                     photo={storyPhotos.todayGroup}
                     className="aspect-[3/4] bg-[#e2d9cb]"
-                    sizes="(min-width: 768px) 18vw, 31vw"
+                    sizes="(min-width: 768px) 23vw, 31vw"
                     framed
                 />
             </TildeReveal>
@@ -44,7 +44,7 @@ export default function TodayGallery() {
                     <StoryPhoto
                         photo={storyPhotos.todaySunset}
                         className="aspect-[16/9] bg-[#d5d6c9]"
-                        sizes="(min-width: 768px) 17vw, 29vw"
+                        sizes="(min-width: 768px) 22vw, 29vw"
                         framed
                     />
                 </TildeReveal>
@@ -52,7 +52,7 @@ export default function TodayGallery() {
                     <StoryPhoto
                         photo={storyPhotos.todayLaugh}
                         className="aspect-[3/4] bg-[#e2ded2]"
-                        sizes="(min-width: 768px) 12vw, 20vw"
+                        sizes="(min-width: 768px) 15vw, 20vw"
                         framed
                     />
                 </TildeReveal>

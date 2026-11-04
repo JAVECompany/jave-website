@@ -8,10 +8,13 @@ export default function TildeConversation() {
         <section
             id="tilde-connections"
             aria-labelledby="tilde-conversation-title"
-            className="grid scroll-mt-12 items-end gap-12 bg-transparent pt-12 pb-24 sm:gap-16 sm:pt-20 sm:pb-32 lg:grid-cols-[minmax(0,1.85fr)_minmax(0,1fr)] lg:gap-[4vw] lg:pt-28 lg:pb-40"
+            className="-mx-2 grid scroll-mt-12 items-start bg-transparent pt-12 pb-40 sm:-mx-3 sm:pt-20 sm:pb-48 lg:-mx-10 lg:pt-28 lg:pb-72"
         >
             <ConversationGallery />
-            <TildeReveal className="min-w-0 justify-self-end lg:justify-self-auto" delay={160}>
+            <TildeReveal
+                className="mt-10 min-w-0 justify-self-end px-2 sm:mt-12 sm:px-3 lg:col-start-1 lg:row-start-1 lg:mt-[30.28%] lg:ml-[58.57%] lg:w-[41.43%] lg:justify-self-auto lg:px-0"
+                delay={160}
+            >
                 <StoryCopy
                     id="tilde-conversation-title"
                     titleClassName="text-[clamp(2rem,2.6vw,3.25rem)]"

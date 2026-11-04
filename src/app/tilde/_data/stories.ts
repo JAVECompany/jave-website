@@ -36,6 +36,7 @@ export const storyPhotos = {
     conversationBakery: { src: null, alt: "빵집에서 함께 빵을 고르는 두 사람" },
     conversationFountain: { src: null, alt: "분수대 곁에서 함께 쉬어 가는 오후" },
     conversationEvening: { src: null, alt: "저녁 산책을 함께하는 사람" },
+    conversationNewMemory: { src: null, alt: "함께 보내며 새롭게 쌓이는 추억" },
     todayDetail: { src: null, alt: "함께 보내는 저녁의 작은 순간" },
     todayGroup: { src: null, alt: "오늘의 약속을 함께 즐기는 친구들" },
     todayWalk: { src: null, alt: "가볍게 산책하며 이야기를 나누는 친구들" },
