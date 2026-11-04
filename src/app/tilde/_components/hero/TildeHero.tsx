@@ -1,3 +1,4 @@
+import TildeReveal from "../motion/TildeReveal";
 import { tildeService } from "../../_data/service";
 import TildeHeroFilm from "./TildeHeroFilm";
 
@@ -10,7 +11,7 @@ export default function TildeHero() {
             <div data-cinematic-hero className="relative h-dvh w-full bg-[#d8ded3]">
                 <TildeHeroFilm />
             </div>
-            <div className="relative isolate px-5 pt-16 pb-12 sm:px-8 sm:pt-24 sm:pb-16 lg:px-16 lg:pt-28 lg:pb-20">
+            <TildeReveal className="relative isolate px-5 pt-16 pb-12 sm:px-8 sm:pt-24 sm:pb-16 lg:px-16 lg:pt-28 lg:pb-20">
                 <span
                     aria-hidden="true"
                     className="pointer-events-none absolute top-10 left-3 -z-10 h-24 w-36 rotate-[55deg] rounded-[50%] bg-[#879775]/20 sm:top-14 sm:left-4 sm:h-32 sm:w-44 lg:top-16 lg:left-6 lg:h-40 lg:w-52"
@@ -27,7 +28,7 @@ export default function TildeHero() {
                 <p className="text-sm leading-[1.9] whitespace-pre-line break-keep text-[var(--service-muted)] sm:text-base">
                     {tildeService.heroDescription}
                 </p>
-            </div>
+            </TildeReveal>
         </section>
     );
 }

@@ -1,7 +1,7 @@
 export const tildeService = {
     name: "틸드",
     description:
-        "취향이 닮은 사람들이 만남, 번개모임, 동아리로 자연스럽게 이어지는 출시 준비 중인 소셜 서비스입니다.",
+        "취향이 닮은 사람들이 대화, 작은 모임, 동아리로 자연스럽게 이어지는 출시 준비 중인 소셜 서비스입니다.",
     heroEyebrow: "TILDE | 모든 만남이 시작 되는 곳",
     tagline: "취향이 닮아,\n일상이 이어지다.",
     heroDescription:

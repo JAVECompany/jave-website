@@ -19,7 +19,7 @@ SRP, 컴포넌트 분리, 폴더링 등 개발 규칙은 [AGENTS.md](AGENTS.md)�
 | 메뉴         | 주요 내용                               | 라우트            |
 | ------------ | --------------------------------------- | ----------------- |
 | 소개         | JAVE 소개, 비전, 핵심 가치              | `/`               |
-| 틸드         | 서비스 설명, 주요 특징, 서비스 바로가기 | `/tilde/`         |
+| 틸드         | 영상과 소개, 대화·함께하는 시간·동아리  | `/tilde/`         |
 | 어썸         | 서비스 설명, 주요 특징, 서비스 바로가기 | `/awesome/`       |
 | 문의         | 회사 연락처와 제휴·문의 안내            | `/contact/`       |
 | 약관 및 정책 | 이용약관을 기본 선택한 통합 약관 화면   | `/policy/`        |
@@ -49,6 +49,8 @@ SRP, 컴포넌트 분리, 폴더링 등 개발 규칙은 [AGENTS.md](AGENTS.md)�
 화면의 전체 너비를 사용하며 공통 레이아웃에 고정 최대 너비를 두지 않습니다. 전체 높이는 최소 `100dvh`로 설정해 모바일 주소창 변화에도 대응하고, 본문이 길어지면 세로 스크롤로 이어집니다. 화면 크기에 따라 좌우 여백·제목 크기·푸터 정렬을 조정하며, 긴 설명 문구는 가독성을 위해 줄 길이만 제한합니다.
 
 서비스별 상세 문구, 이미지, 외부 링크는 콘텐츠 확정 후 반영합니다.
+
+틸드는 기존 영상과 소개 문구 아래에 두 사람의 대화, 오늘 함께하는 시간, 꾸준히 이어지는 동아리를 순서대로 보여줍니다. 하단 사진 영역 5곳은 현재 단색 직사각형 자리표시자이며, 문구와 사진 슬롯은 `src/app/tilde/_data/stories.ts`에서 관리합니다. 새 사진을 생성하거나 연결하지 않았습니다. 영상 아래 소개 문구와 타원은 함께, 각 이야기의 문구 묶음과 사진은 각각 화면에 진입할 때 부드럽게 나타납니다. 틸드 전용 `TildeReveal`이 공통 `ScrollReveal`을 감싸 세로 이동 전환을 보완하며, 동작 줄이기 설정과 JavaScript 미실행 환경에서는 내용을 숨기지 않습니다.
 
 ## 기술 스택
 
@@ -129,13 +131,23 @@ jave-website/
 │   │   ├── tilde/
 │   │   │   ├── page.tsx           # /tilde/
 │   │   │   ├── _components/
-│   │   │   │   ├── hero/          # TildeHero 및 장면 스타일
-│   │   │   │   ├── connections/   # 취향·번개·동아리 소개 카드
-│   │   │   │   ├── mode/          # 만남 ON/OFF 미리보기
-│   │   │   │   ├── activities/    # 번개·동아리 스크롤 장면
-│   │   │   │   └── app-preview/   # 만남·번개·동아리 디자인 시안
+│   │   │   │   ├── hero/          # 기존 영상과 소개 문구
+│   │   │   │   ├── motion/
+│   │   │   │   │   └── TildeReveal.tsx # 공통 ScrollReveal의 틸드 전용 전환 보완
+│   │   │   │   ├── stories/       # 현재 하단의 세 가지 일상 이야기
+│   │   │   │   │   ├── TildeConversation.tsx
+│   │   │   │   │   ├── TildeToday.tsx
+│   │   │   │   │   ├── TildeClubs.tsx
+│   │   │   │   │   ├── StoryCopy.tsx
+│   │   │   │   │   └── StoryPhoto.tsx
+│   │   │   │   ├── connections/   # 이전 소개 카드 보관
+│   │   │   │   ├── sports/        # 이전 테니스 섹션 보관
+│   │   │   │   ├── mode/          # 이전 ON/OFF 미리보기 보관
+│   │   │   │   ├── activities/    # 이전 활동 스크롤 장면 보관
+│   │   │   │   └── app-preview/   # 이전 앱 디자인 시안 보관
 │   │   │   └── _data/
-│   │   │       └── service.ts     # 틸드 전용 콘텐츠
+│   │   │       ├── service.ts     # 틸드 메타데이터·소개 및 이전 콘텐츠
+│   │   │       └── stories.ts     # 현재 하단 문구와 사진 슬롯 5개
 │   │   ├── awesome/
 │   │   │   ├── page.tsx           # /awesome/
 │   │   │   ├── _components/
@@ -217,11 +229,13 @@ jave-website/
 
 일반 스타일은 Tailwind CSS, 브랜드별 복잡한 앱 시안과 스크롤 장면은 컴포넌트 옆의 CSS Modules를 사용합니다. 모든 소스 스타일은 Prettier 규칙으로 정리합니다. 서비스 이미지와 폰트는 제공 자료에서 추출해 로컬로 제공합니다. 파비콘과 Open Graph 이미지는 추후 `src/app/`에 추가합니다. `robots.txt`와 `sitemap.xml`은 배포 도메인과 공개 정책 확정 후 작성합니다. `out/`은 빌드로 생성되므로 소스 구조에 포함하지 않습니다.
 
+틸드의 이전 카드·테니스·ON/OFF·활동·앱 시안 파일은 저장소에 보관하지만 현재 `/tilde/`에서는 렌더링하지 않습니다. 틸드 하단의 기존 `ServiceCta`도 표시하지 않으며, 어썸에서 사용하는 공통 컴포넌트와 기존 자산은 유지합니다. 현재 틸드 본문은 `TildeHero`, `TildeConversation`, `TildeToday`, `TildeClubs` 순서로 조합하고 공통 푸터로 이어집니다.
+
 컴포넌트 하나당 파일 하나를 사용하고, `page.tsx`는 메타데이터와 컴포넌트 조합에 집중합니다. 한 라우트에서만 사용하는 컴포넌트를 공통 폴더에 넣지 않으며, 실제로 여러 라우트에서 필요해지면 공통으로 옮깁니다. 다른 라우트의 `_components/`를 직접 참조하지 않습니다.
 
 페이지 전용 데이터·훅·유틸리티·타입은 필요할 때 해당 라우트의 `_data/`, `_hooks/`, `_lib/`, `_types/`로 분리합니다. 실제 공통 모듈은 `src/data/`, `src/hooks/`, `src/lib/`, `src/types/`에서 관리합니다.
 
-헤더는 공통 상단 영역을 조합하고, `FloatingBar`는 영문 중앙 메뉴, `NavigationLink`는 현재 경로에 따른 활성 표시를 담당합니다. 모든 라우트에서 같은 메뉴 컴포넌트를 사용하고 별도 틸드 메뉴는 두지 않습니다. 문의는 서비스 본문의 안내 링크와 기존 `/contact/` 라우트에서 제공합니다. 회사의 `CompanyStory`는 브랜드 관점을, 틸드의 `TildeFilmControl`은 영상 일시정지·이어 재생 버튼을 담당합니다. 페이지별 소개 데이터는 각 라우트의 `_data/`에서 관리합니다.
+헤더는 공통 상단 영역을 조합하고, `FloatingBar`는 영문 중앙 메뉴, `NavigationLink`는 현재 경로에 따른 활성 표시를 담당합니다. 모든 라우트에서 같은 메뉴 컴포넌트를 사용하고 별도 틸드 메뉴는 두지 않습니다. 문의는 어썸 본문의 안내 링크와 기존 `/contact/` 라우트에서 제공합니다. 회사의 `CompanyStory`는 브랜드 관점을, 틸드의 `TildeFilmControl`은 영상 일시정지·이어 재생 버튼을 담당합니다. 페이지별 소개 데이터는 각 라우트의 `_data/`에서 관리합니다.
 
 ## 라우팅 원칙
 
@@ -230,4 +244,4 @@ jave-website/
 - `/policy/`와 `/policy/[slug]/`는 통합 약관 화면을 공유합니다. `generateStaticParams`로 등록한 7개 항목을 빌드 시 생성하도록 구성하며, 등록하지 않은 항목은 404로 처리합니다. [정적 동적 라우트 생성 공식 문서](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)
 - 메뉴는 `next/link`로 연결합니다. URL이 바뀌고 공통 레이아웃 내부의 본문이 전환됩니다.
 - `components/`와 `data/`, 각 라우트의 `_components/` 등 내부 구현 폴더는 URL을 생성하지 않습니다. 페이지 전용 컴포넌트는 해당 라우트에서 조합합니다.
-- 활성 메뉴의 `NavigationLink`, 스크롤 효과의 `ScrollReveal`·`ScrollScene`, 틸드 ON/OFF 미리보기의 `TildeMode`에 Client Component를 사용합니다. 페이지 본문은 Server Component를 기본으로 하며 빌드 시 HTML로 생성합니다.
+- 활성 메뉴의 `NavigationLink`, 스크롤 효과의 `ScrollReveal`·`ScrollScene`, 틸드 영상 재생의 `TildeHeroFilm`에 Client Component를 사용합니다. 현재 틸드 하단의 이야기 섹션과 페이지 본문은 Server Component를 기본으로 하며 빌드 시 HTML로 생성합니다.
