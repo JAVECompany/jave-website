@@ -7,7 +7,7 @@ export default function TildeHero() {
             aria-labelledby="tilde-title"
             className="-mx-5 -mt-44 sm:-mx-8 sm:-mt-40 lg:-mx-16"
         >
-            <div data-cinematic-hero className="relative aspect-video w-full bg-[#d8ded3]">
+            <div data-cinematic-hero className="relative h-dvh w-full bg-[#d8ded3]">
                 <TildeHeroFilm />
             </div>
             <div className="px-5 pt-14 sm:px-8 sm:pt-20 lg:px-16">
