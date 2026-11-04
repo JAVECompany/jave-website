@@ -9,7 +9,7 @@ export default function TildeHeroFilm() {
     const { filmRef, ready, failed, playing, togglePlayback } = useTildeFilm();
 
     return (
-        <figure className="absolute inset-0 overflow-hidden">
+        <figure className="absolute inset-0 overflow-clip">
             <Image
                 src={filmPoster}
                 alt=""
