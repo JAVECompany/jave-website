@@ -10,29 +10,23 @@ export default function TildeHero() {
             <div data-cinematic-hero className="relative h-dvh w-full bg-[#d8ded3]">
                 <TildeHeroFilm />
             </div>
-            <div className="px-5 pt-14 sm:px-8 sm:pt-20 lg:px-16">
-                <p className="flex items-center gap-3 text-sm font-semibold text-[var(--service-ink)]">
-                    {tildeService.name}
-                    <span lang="en" className="text-xs font-medium tracking-[.24em]">
-                        TILDE
-                    </span>
-                    <span className="border-l border-current/45 pl-3 text-xs">출시 준비 중</span>
+            <div className="relative isolate px-5 pt-16 pb-12 sm:px-8 sm:pt-24 sm:pb-16 lg:px-16 lg:pt-28 lg:pb-20">
+                <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute top-10 left-3 -z-10 h-24 w-36 rotate-[55deg] rounded-[50%] bg-[#879775]/20 sm:top-14 sm:left-4 sm:h-32 sm:w-44 lg:top-16 lg:left-6 lg:h-40 lg:w-52"
+                />
+                <p className="text-xs leading-relaxed font-medium tracking-[.045em] text-[var(--service-ink)]">
+                    {tildeService.heroEyebrow}
                 </p>
                 <h1
                     id="tilde-title"
-                    className="my-5 font-['Noto_Serif_KR',serif] text-[clamp(2.6rem,6vw,5.75rem)] leading-[1.16] tracking-[-.07em] whitespace-pre-line"
+                    className="-ml-[.045em] mt-3 mb-10 font-['Noto_Serif_KR',serif] text-[clamp(2.25rem,6vw,5.75rem)] leading-[1.22] font-normal tracking-[-.055em] whitespace-pre-line break-keep"
                 >
                     {tildeService.tagline}
                 </h1>
-                <p className="text-base leading-relaxed whitespace-pre-line text-[var(--service-muted)]">
+                <p className="text-sm leading-[1.9] whitespace-pre-line break-keep text-[var(--service-muted)] sm:text-base">
                     {tildeService.heroDescription}
                 </p>
-                <a
-                    href="#tilde-connections"
-                    className="mt-6 inline-flex min-h-11 items-center gap-3 border-b border-current text-sm text-[var(--service-ink)]"
-                >
-                    세 가지 만남 살펴보기 <span aria-hidden="true">↓</span>
-                </a>
             </div>
         </section>
     );
