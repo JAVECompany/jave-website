@@ -56,6 +56,16 @@ npm run dev
 
 [로컬 개발 페이지](http://localhost:3000)에서 확인합니다. 포트가 사용 중이면 터미널에 표시된 실제 주소를 사용합니다.
 
+### `yjy` 로컬 미리보기와 배포 생략
+
+로컬 디자인 작업은 다음 명령으로 실행하면 [틸드 미리보기](http://127.0.0.1:4330/tilde/)에서 확인할 수 있습니다. 개발 서버를 켜둔 동안 소스를 저장하면 브라우저에 변경 사항이 자동 반영됩니다.
+
+```powershell
+npm run dev -- --hostname 127.0.0.1 --port 4330
+```
+
+로컬 확인만 요청한 작업도 완료한 단위별로 `yjy`에 커밋하고 push합니다. 이때 Git 연동으로 공개 사이트까지 갱신되지 않도록 커밋 메시지 맨 앞에 `[CF-Pages-Skip]`을 붙입니다. 예: `[CF-Pages-Skip] fix: 틸드 영상의 창 크기 변경 시 좌우 여백 제거`. 이 접두어는 [Cloudflare Pages의 배포 생략 규칙](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/#skipping-a-build-via-a-commit-message)에 따른 예외이며, 뒤에는 한글 Conventional Commits 형식을 유지합니다. `main`에는 커밋하거나 push하지 않습니다. 공개 배포는 사용자가 다시 요청할 때 진행합니다.
+
 | 페이지                    | 경로                                                                                                                 |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | 소개                      | `/`                                                                                                                  |
