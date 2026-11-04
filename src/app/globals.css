@@ -20,22 +20,8 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
-body:has(main [data-inline-header]) {
-    --inline-header-height: calc(4.5rem + env(safe-area-inset-top, 0px));
-}
-
-body:has(main [data-inline-header]) > header {
-    position: static;
-    display: grid;
-    align-content: center;
-    min-height: var(--inline-header-height);
-    padding-block: env(safe-area-inset-top, 0px) 0;
-}
-
-@media (min-width: 640px) {
-    body:has(main [data-inline-header]) {
-        --inline-header-height: calc(5.25rem + env(safe-area-inset-top, 0px));
-    }
+body:has(main [data-cinematic-hero]) > header {
+    display: none;
 }
 
 .skip-link {

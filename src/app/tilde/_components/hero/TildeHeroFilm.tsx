@@ -5,65 +5,37 @@ import { filmPoster } from "../../_data/film";
 import { useTildeFilm } from "../../_hooks/use-tilde-film";
 
 export default function TildeHeroFilm() {
-    const { filmRef, playing, ready, failed, togglePlayback } = useTildeFilm();
-    const controlLabel = playing ? "틸드 소개 영상 일시정지" : "틸드 소개 영상 재생";
+    const { filmRef, ready, failed } = useTildeFilm();
 
     return (
-        <figure>
-            <div className="w-full bg-neutral-950">
-                <div className="relative mx-auto aspect-video w-full lg:max-w-[calc((100dvh-var(--inline-header-height)-3rem)*16/9)]">
-                    <Image
-                        src={filmPoster}
-                        alt=""
-                        fill
-                        loading="eager"
-                        fetchPriority="high"
-                        sizes="100vw"
-                        className="object-contain"
-                    />
-                    <video
-                        ref={filmRef}
-                        id="tilde-film"
-                        aria-label="두 사람의 만남, 독서와 보드게임 모임, 도예와 운동, 친구들과의 맥주 모임에 이어 물결과 바닷가, 구름을 담은 틸드 소개 영상입니다."
-                        preload="none"
-                        loop
-                        muted
-                        playsInline
-                        disablePictureInPicture
-                        disableRemotePlayback
-                        hidden={failed}
-                        className={`absolute inset-0 size-full object-contain ${ready ? "" : "opacity-0"}`}
-                    />
-                </div>
-            </div>
-            <div className="flex h-12 items-center justify-end bg-neutral-950 px-5 text-white sm:px-8 lg:px-16">
-                {failed && (
-                    <span role="status" className="sr-only">
-                        영상 대신 첫 장면 사진을 표시합니다.
-                    </span>
-                )}
-                <button
-                    type="button"
-                    aria-controls="tilde-film"
-                    aria-label={controlLabel}
-                    onClick={togglePlayback}
-                    className="grid size-11 cursor-pointer place-items-center rounded-full text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-white [@media(scripting:none)]:hidden"
-                >
-                    <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
-                        aria-hidden="true"
-                    >
-                        {playing ? (
-                            <path d="M4 2.5h2.7v11H4zm5.3 0H12v11H9.3z" />
-                        ) : (
-                            <path d="M4 2.8a.5.5 0 0 1 .75-.43l8.2 5.2a.5.5 0 0 1 0 .86l-8.2 5.2a.5.5 0 0 1-.75-.43z" />
-                        )}
-                    </svg>
-                </button>
-            </div>
+        <figure className="absolute inset-0 overflow-hidden">
+            <Image
+                src={filmPoster}
+                alt=""
+                fill
+                loading="eager"
+                fetchPriority="high"
+                sizes="100vw"
+                className="object-cover"
+            />
+            <video
+                ref={filmRef}
+                id="tilde-film"
+                aria-label="두 사람의 만남, 독서와 보드게임 모임, 도예와 운동, 친구들과의 모임에 이어 물결과 바닷가를 담은 틸드 소개 영상입니다."
+                preload="none"
+                loop
+                muted
+                playsInline
+                disablePictureInPicture
+                disableRemotePlayback
+                hidden={failed}
+                className={`absolute inset-0 size-full object-cover ${ready ? "" : "opacity-0"}`}
+            />
+            {failed && (
+                <span role="status" className="sr-only">
+                    영상 대신 첫 장면 사진을 표시합니다.
+                </span>
+            )}
         </figure>
     );
 }

@@ -221,7 +221,7 @@ jave-website/
 
 페이지 전용 데이터·훅·유틸리티·타입은 필요할 때 해당 라우트의 `_data/`, `_hooks/`, `_lib/`, `_types/`로 분리합니다. 실제 공통 모듈은 `src/data/`, `src/hooks/`, `src/lib/`, `src/types/`에서 관리합니다.
 
-헤더는 공통 상단 영역을 조합하고, `FloatingBar`는 중앙 메뉴, `ContactLink`는 문의 링크, `NavigationLink`는 현재 경로에 따른 활성 표시를 담당합니다. 페이지별 소개 데이터는 각 라우트의 `_data/`에서 관리합니다.
+헤더는 공통 상단 영역을 조합하고, `FloatingBar`는 중앙 메뉴, `ContactLink`는 문의 링크, `NavigationLink`는 현재 경로에 따른 활성 표시를 담당합니다. 틸드 첫 화면은 공통 헤더 대신 영상 위의 `TildeFilmNavigation`에서 영문 메뉴를 표시합니다. 페이지별 소개 데이터는 각 라우트의 `_data/`에서 관리합니다.
 
 ## 라우팅 원칙
 
