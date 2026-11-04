@@ -1,3 +1,5 @@
+import type { StoryCopyContent } from "../_types/story-copy";
+
 export type StoryPhotoAsset = {
     src: string | null;
     alt: string;
@@ -7,21 +9,37 @@ export const conversationStory = {
     eyebrow: "함께라서 달라지는 하루",
     title: "조금 더,\n같이 있고 싶은 사람.",
     description: "헤어지기 아쉬운 대화,\n돌아오는 길에도 떠오르는 웃음.",
-};
+    accent: {
+        target: "title",
+        text: "같이",
+        className:
+            "top-[.08em] -left-[.08em] h-[1.35em] w-[2.45em] -rotate-[32deg] bg-[#e2d8cd]/70",
+    },
+} satisfies StoryCopyContent;
 
 export const todayStory = {
     eyebrow: "오늘을 함께하는 사람들",
     title: "오늘,\n같이 할까요?",
     description:
         "문득 걷고 싶은 저녁, 가볍게 나누는 커피 한 잔.\n시간이 맞는 사람들과 오늘의 작은 약속을 만들어요.",
-};
+    accent: {
+        target: "description",
+        text: "시간이",
+        className: "top-[.25em] -left-[.15em] h-[2em] w-[5em] -rotate-[28deg] bg-[#d4dfdc]/40",
+    },
+} satisfies StoryCopyContent;
 
 export const clubsStory = {
     eyebrow: "좋아하는 것으로 이어지는 동아리",
     title: "다음 주에도,\n우리 만나요.",
     description:
         "같은 취미로 모여, 함께하는 시간이 쌓이면.\n좋아하는 일 곁에 좋아하는 사람들이 남아요.",
-};
+    accent: {
+        target: "eyebrow",
+        text: "동아리",
+        className: "-top-[.55em] -left-[.35em] h-[2.8em] w-[3.8em] -rotate-[34deg] bg-[#d7cabb]/65",
+    },
+} satisfies StoryCopyContent;
 
 export const storyPhotos = {
     conversation: { src: null, alt: "카페에서 편안하게 대화하는 두 사람" },

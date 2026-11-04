@@ -1,7 +1,7 @@
 import { storyPhotos } from "./stories";
 
 // A full-width gallery with a free area below the right-hand frames for the story copy.
-export const conversationGalleryCanvas = { width: 1354, height: 582.4375 };
+export const conversationGalleryCanvas = { width: 1354, height: 2152 / 3 };
 
 export const conversationGalleryFrames = [
     {
@@ -14,8 +14,8 @@ export const conversationGalleryFrames = [
     {
         photo: storyPhotos.conversationLittleMoment,
         x: 195,
-        y: 0,
-        width: 218,
+        y: 27,
+        width: 170,
         className: "aspect-video bg-[#dedbcf]",
     },
     {
@@ -51,7 +51,7 @@ export const conversationGalleryFrames = [
         x: 423,
         y: 484,
         width: 175,
-        className: "aspect-video bg-[#e2d8cd]",
+        className: "aspect-[3/4] bg-[#e2d8cd]",
     },
     {
         photo: storyPhotos.conversationWindow,
@@ -71,14 +71,14 @@ export const conversationGalleryFrames = [
         photo: storyPhotos.conversationMoment,
         x: 860,
         y: 110,
-        width: 242,
+        width: 218,
         className: "aspect-video bg-[#e5dfd6]",
     },
     {
         photo: storyPhotos.conversationNewMemory,
-        x: 1112,
+        x: 1088,
         y: 110,
-        width: 242,
+        width: 260,
         className: "aspect-video bg-[#d9dfd5]",
     },
     {
@@ -92,7 +92,7 @@ export const conversationGalleryFrames = [
         photo: storyPhotos.conversationEvening,
         x: 793,
         y: 256,
-        width: 242,
+        width: 210,
         className: "aspect-video bg-[#d9d9cf]",
     },
 ];
