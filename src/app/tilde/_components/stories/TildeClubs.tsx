@@ -8,7 +8,7 @@ export default function TildeClubs() {
         <section
             id="tilde-clubs"
             aria-labelledby="tilde-clubs-title"
-            className="scroll-mt-12 pt-20 pb-8 sm:pt-28 sm:pb-12 lg:pt-36 lg:pb-16"
+            className="scroll-mt-12 pt-32 pb-8 sm:pt-44 sm:pb-12 lg:pt-64 lg:pb-16"
         >
             <div className="grid min-w-0 grid-cols-12 items-start gap-x-3 gap-y-10 p-2 sm:gap-x-4 sm:p-3 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)_minmax(0,3fr)] md:gap-y-0 lg:gap-x-6 lg:p-4">
                 <div className="col-span-10 col-start-2 row-start-1 min-w-0 md:col-span-1 md:col-start-2">
