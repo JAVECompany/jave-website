@@ -6,6 +6,7 @@ export const conversationGalleryCanvas = { width: 1354, height: 2152 / 3 };
 export const conversationGalleryFrames = [
     {
         photo: storyPhotos.conversationWalk,
+        revealDelay: 0,
         x: 0,
         y: 110,
         width: 185,
@@ -14,6 +15,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationLittleMoment,
+        revealDelay: 60,
         x: 195,
         y: 27,
         width: 170,
@@ -22,6 +24,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversation,
+        revealDelay: 120,
         x: 195,
         y: 132,
         width: 218,
@@ -30,6 +33,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationBakery,
+        revealDelay: 90,
         x: 195,
         y: 264,
         width: 218,
@@ -38,6 +42,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationEveryday,
+        revealDelay: 210,
         x: 423,
         y: 132,
         width: 175,
@@ -46,6 +51,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationFountain,
+        revealDelay: 150,
         x: 423,
         y: 375,
         width: 175,
@@ -54,6 +60,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationLaugh,
+        revealDelay: 70,
         x: 423,
         y: 484,
         width: 175,
@@ -62,6 +69,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationWindow,
+        revealDelay: 170,
         x: 0,
         y: 367,
         width: 185,
@@ -70,6 +78,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationCoffee,
+        revealDelay: 280,
         x: 608,
         y: 110,
         width: 242,
@@ -78,6 +87,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationMoment,
+        revealDelay: 380,
         x: 860,
         y: 110,
         width: 218,
@@ -86,6 +96,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationNewMemory,
+        revealDelay: 480,
         x: 1088,
         y: 110,
         width: 260,
@@ -94,6 +105,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationSmile,
+        revealDelay: 110,
         x: 608,
         y: 256,
         width: 175,
@@ -102,6 +114,7 @@ export const conversationGalleryFrames = [
     },
     {
         photo: storyPhotos.conversationEvening,
+        revealDelay: 240,
         x: 793,
         y: 256,
         width: 210,

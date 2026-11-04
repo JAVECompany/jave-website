@@ -41,7 +41,7 @@
 
 각 이야기에는 기존 사진 자리표시자의 연한 색을 재사용한 반투명 타원을 추가합니다. 첫 제목의 “같이” 뒤에는 베이지, 오늘 설명 둘째 줄의 “시간이” 뒤에는 작은 청회색 타원, 동아리 상단 문구의 마지막 “동아리” 뒤에는 모래색을 둡니다. 오늘 타원의 불투명도는 40%입니다. `StoryAccentText.tsx`는 지정 단어만 감싸고 타원을 절대 배치하며, `StoryCopy`가 적용할 문구 영역을 선택합니다. 설정은 `stories.ts`, 타입은 `_types/story-copy.ts`에서 관리합니다. 타원은 `aria-hidden`과 `pointer-events-none`으로 처리하고 기존 `TildeReveal` 안에서 문구와 함께 나타납니다. 원래 소개의 세이지 타원은 유지합니다.
 
-`TildeHero`의 영상 아래 소개 영역은 틸드 전용 `TildeReveal`로 감싸 문구와 타원이 함께 나타나게 합니다. 소개 텍스트와 타원 배치는 유지합니다. 각 이야기의 `StoryCopy`와 `StoryPhoto`도 개별 `TildeReveal`로 감싸므로 문구 묶음과 사진이 각자의 화면 진입 시점에 나타납니다. 약 1초짜리 투명도·세로 이동 전환을 사용하고, 일부 문구와 사진에는 짧은 지연을 둡니다.
+`TildeHero`의 영상 아래 소개 영역은 틸드 전용 `TildeReveal`로 감싸 문구와 타원이 함께 나타나게 합니다. 소개 텍스트와 타원 배치는 유지합니다. 각 이야기의 `StoryCopy`와 `StoryPhoto`도 개별 `TildeReveal`로 감싸므로 문구 묶음과 사진이 각자의 화면 진입 시점에 나타납니다. 약 1초짜리 투명도·세로 이동 전환을 사용하고, 일부 문구와 사진에는 짧은 지연을 둡니다. 첫 갤러리는 `conversation-gallery.ts`의 액자별 `revealDelay`로 0~480ms의 지연을 지정해 같은 높이의 사진도 각기 다른 타이밍에 나타납니다. 각 액자의 화면 진입 감지와 동작 줄이기 설정은 유지합니다.
 
 `src/app/tilde/_components/motion/TildeReveal.tsx`는 공통 `ScrollReveal`의 진입 감지와 접근성 처리를 재사용하는 라우트 전용 어댑터입니다. Tailwind 4의 세로 이동에 쓰이는 CSS `translate`를 전환 대상에 추가하고, 동작 줄이기 설정에서는 전환을 끕니다. 공통 `ScrollReveal` 자체는 수정하지 않아 어썸의 기존 동작을 유지합니다.
 

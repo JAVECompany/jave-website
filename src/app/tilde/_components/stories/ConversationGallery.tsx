@@ -41,7 +41,7 @@ export default function ConversationGallery() {
             style={canvasStyle}
         >
             {conversationGalleryFrames.map(
-                ({ photo, x, y, width, aspectRatio, className }, index) => {
+                ({ photo, x, y, width, aspectRatio, className, revealDelay }, index) => {
                     const mobileFrame = mobileGallery.frames[index];
                     const tabletFrame = tabletGallery.frames[index];
                     const frameStyle: GalleryStyle = {
@@ -63,7 +63,7 @@ export default function ConversationGallery() {
                             className="absolute top-[var(--gallery-mobile-top)] left-[var(--gallery-mobile-left)] w-[var(--gallery-mobile-width)] sm:top-[var(--gallery-tablet-top)] sm:left-[var(--gallery-tablet-left)] sm:w-[var(--gallery-tablet-width)] lg:top-[var(--gallery-desktop-top)] lg:left-[var(--gallery-desktop-left)] lg:w-[var(--gallery-desktop-width)]"
                             style={frameStyle}
                         >
-                            <TildeReveal className="h-full" delay={(index % 4) * 40}>
+                            <TildeReveal className="h-full" delay={revealDelay}>
                                 <StoryPhoto
                                     photo={photo}
                                     framed
