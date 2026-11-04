@@ -5,6 +5,27 @@ html {
     min-height: 100%;
     width: 100%;
     scroll-padding-top: 11rem;
+    scrollbar-width: thin;
+    scrollbar-color: #8f9a88 #eceee7;
+}
+
+html::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #eceee7;
+}
+
+html::-webkit-scrollbar-thumb {
+    border: 1px solid #eceee7;
+    border-radius: 999px;
+    background: #8f9a88;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #626f5b;
 }
 
 body {
@@ -20,8 +41,17 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
-body:has(main [data-cinematic-hero]) > header {
-    display: none;
+.site-header {
+    color: #36453c;
+}
+
+body:has(main [data-immersive-page]) > .site-header {
+    background: linear-gradient(to bottom, rgb(10 17 16 / 32%), transparent);
+    color: #fff;
+}
+
+.site-header a:focus-visible {
+    outline-color: currentColor;
 }
 
 .skip-link {

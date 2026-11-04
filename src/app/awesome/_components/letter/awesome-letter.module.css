@@ -1,16 +1,14 @@
 .section {
     display: grid;
-    grid-template-columns: 1fr 1.05fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     align-items: center;
-    gap: clamp(40px, 6vw, 120px);
-    padding: 85px clamp(25px, 6vw, 110px);
-    border-radius: 42px;
-    background: #f0e7dc;
-    overflow: hidden;
+    gap: clamp(40px, 7vw, 150px);
+    padding: 120px 7vw;
+    background: #ede4d7;
 }
 .visual {
     position: relative;
-    min-height: 690px;
+    min-height: 730px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,7 +71,7 @@
 .note {
     font-size: 11px;
     line-height: 1.8;
-    color: #9b8b7c;
+    color: #7e7062;
     margin-top: 25px;
     word-break: keep-all;
 }
@@ -83,7 +81,7 @@
 @media (max-width: 1000px) {
     .section {
         grid-template-columns: minmax(0, 1fr);
-        padding: 60px 40px;
+        padding: 96px 40px;
         gap: 60px;
     }
     .visual {
@@ -99,12 +97,11 @@
 }
 @media (max-width: 600px) {
     .section {
-        border-radius: 28px;
-        padding: 40px 22px;
-        gap: 30px;
+        padding: 80px 24px;
+        gap: 40px;
     }
     .visual {
-        min-height: 565px;
+        min-height: 590px;
     }
     .phone {
         --device-width: 245px;
@@ -123,5 +120,18 @@
     }
     .label {
         font-size: 11px;
+    }
+}
+
+@media (max-width: 380px) {
+    .visual {
+        min-height: 540px;
+    }
+    .phone {
+        --device-width: 220px;
+    }
+    .paper {
+        width: 200px;
+        height: 370px;
     }
 }

@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { filmPoster } from "../../_data/film";
 import { useTildeFilm } from "../../_hooks/use-tilde-film";
+import TildeFilmControl from "./TildeFilmControl";
 
 export default function TildeHeroFilm() {
-    const { filmRef, ready, failed } = useTildeFilm();
+    const { filmRef, ready, failed, playing, togglePlayback } = useTildeFilm();
 
     return (
-        <figure className="absolute inset-0 overflow-hidden">
+        <figure className="absolute inset-y-0 left-1/2 w-full max-w-[177.7778dvh] -translate-x-1/2 overflow-hidden">
             <Image
                 src={filmPoster}
                 alt=""
@@ -16,7 +17,7 @@ export default function TildeHeroFilm() {
                 loading="eager"
                 fetchPriority="high"
                 sizes="100vw"
-                className="object-cover"
+                className="object-contain"
             />
             <video
                 ref={filmRef}
@@ -29,8 +30,9 @@ export default function TildeHeroFilm() {
                 disablePictureInPicture
                 disableRemotePlayback
                 hidden={failed}
-                className={`absolute inset-0 size-full object-cover ${ready ? "" : "opacity-0"}`}
+                className={`absolute inset-0 size-full object-contain ${ready ? "" : "opacity-0"}`}
             />
+            <TildeFilmControl playing={playing} onToggle={togglePlayback} />
             {failed && (
                 <span role="status" className="sr-only">
                     영상 대신 첫 장면 사진을 표시합니다.

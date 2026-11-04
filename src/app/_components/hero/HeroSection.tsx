@@ -1,26 +1,58 @@
+import Image from "next/image";
 import { company } from "../../../data/company";
 
 export default function HeroSection() {
     return (
-        <section className="pb-12 sm:pb-16 lg:pb-20" aria-labelledby="company-title">
-            <p className="flex items-center gap-3 text-xs font-medium tracking-[.16em] text-[#566250]">
-                {company.name}
-                <span aria-hidden="true" className="h-px w-8 bg-[#acb4a6]" />
-                <span className="tracking-normal">회사소개</span>
-            </p>
-            <div className="mt-6 grid items-end gap-7 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+        <section
+            className="relative isolate flex min-h-dvh flex-col justify-end bg-[#263a30] px-6 pt-36 pb-9 text-[#faf8f0] sm:px-10 sm:pb-12 lg:px-[6vw] lg:pt-32 lg:pb-14"
+            aria-labelledby="company-title"
+        >
+            <div className="absolute inset-0 -z-10 lg:left-[28%]">
+                <Image
+                    src="/images/tilde/photography/community.webp"
+                    alt=""
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 72vw, 100vw"
+                    className="object-cover object-[58%_center] lg:object-[62%_center]"
+                />
+                <div className="absolute inset-0 bg-[#14251b]/35" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#172b21] via-[#172b21]/35 to-transparent lg:bg-linear-to-r lg:from-[#263a30] lg:via-[#263a30]/30 lg:to-transparent" />
+            </div>
+            <div className="relative mt-12 mb-12 sm:mb-16 lg:mt-0 lg:mb-[6vh]">
+                <p lang="en" className="mb-6 text-[10px] tracking-[.26em] text-white/70 sm:text-xs">
+                    A LITTLE CLOSER TO EACH OTHER
+                </p>
+                <p
+                    lang="en"
+                    className="mb-6 text-[clamp(5.5rem,12vw,13rem)] leading-[.8] font-light tracking-[-.075em] sm:mb-10"
+                >
+                    {company.name}
+                </p>
                 <h1
                     id="company-title"
-                    className="font-['Noto_Serif_KR',serif] text-[clamp(2.8rem,5.3vw,6.5rem)] leading-[1.28] font-normal tracking-[-.075em] break-keep text-[#27342d]"
+                    className="font-['Noto_Serif_KR',serif] text-[clamp(2.3rem,3.7vw,5.6rem)] leading-[1.45] font-normal tracking-[-.07em] break-keep"
                 >
                     사람과 사람이
                     <br />
                     가까워지는 방식.
                 </h1>
-                <p className="max-w-[30em] text-base leading-[1.9] break-keep text-[#535b55] sm:text-lg lg:pb-2">
-                    JAVE는 같은 취향을 나누는 틸드와 한 통의 편지로 인연을 시작하는 어썸을 준비하고
-                    있습니다.
+            </div>
+            <div className="flex flex-wrap items-end justify-between gap-x-12 gap-y-7 border-t border-white/30 pt-6">
+                <p className="max-w-[30em] text-sm leading-[1.9] break-keep text-white/80 sm:text-base">
+                    취향을 나누는 순간부터, 진심을 전하는 첫 편지까지.
+                    <br className="hidden sm:block" />
+                    JAVE는 일상 속 새로운 연결을 준비합니다.
                 </p>
+                <a
+                    href="#company-story"
+                    className="inline-flex min-h-11 items-center gap-8 text-[11px] tracking-[.18em] text-white/90 transition-colors hover:text-white"
+                >
+                    OUR STORY{" "}
+                    <span aria-hidden="true" className="text-lg">
+                        ↓
+                    </span>
+                </a>
             </div>
         </section>
     );

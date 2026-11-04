@@ -5,7 +5,7 @@ import { awesomePrinciples } from "../../_data/service";
 
 export default function AwesomeTrust() {
     return (
-        <section className="grid grid-cols-[minmax(0,1fr)_minmax(0,.85fr)] items-center gap-[clamp(40px,8vw,150px)] px-[4vw] pt-[140px] pb-5 max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[900px]:px-[15px] max-[900px]:pt-[85px] max-[900px]:pb-0 max-[600px]:px-[3px] max-[600px]:pt-[75px]">
+        <section className="grid grid-cols-1 items-center gap-14 px-6 py-24 sm:px-10 sm:py-32 min-[1001px]:grid-cols-[minmax(0,1fr)_minmax(0,.85fr)] min-[1001px]:gap-[9vw] lg:px-[7vw] lg:py-40">
             <ScrollReveal>
                 <ServiceHeading
                     eyebrow="03 · TRUST BEFORE EVERYTHING"
@@ -32,18 +32,18 @@ export default function AwesomeTrust() {
                 </div>
             </ScrollReveal>
             <ScrollReveal
-                className="relative overflow-hidden rounded-[32px] bg-[#e8d7c5] max-[900px]:mx-auto max-[900px]:w-full max-[900px]:max-w-[480px] max-[600px]:rounded-3xl"
+                className="relative mx-auto w-full max-w-[560px] border border-[#d8cbb9] bg-[#e8d7c5] p-3 sm:p-5"
                 delay={100}
             >
                 <Image
                     src="/images/awesome/photography/app-design-preview.webp"
                     width={531}
                     height={732}
-                    sizes="(max-width: 900px) 90vw, 40vw"
+                    sizes="(max-width: 1000px) 90vw, 40vw"
                     alt="제공된 어썸 브랜드 보드에서 추출한 앱 디자인 예시"
                     className="block h-auto w-full"
                 />
-                <span className="absolute right-5 bottom-[23px] left-5 text-center text-[13px] text-[#f9eee1] [font-family:'Noto_Serif_KR',serif] [text-shadow:0_2px_10px_#0009]">
+                <span className="absolute right-5 bottom-8 left-5 text-center text-[13px] text-[#f9eee1] [font-family:'Noto_Serif_KR',serif] [text-shadow:0_2px_10px_#0009]">
                     가까운 듯, 더 좋은 인연으로.
                 </span>
             </ScrollReveal>

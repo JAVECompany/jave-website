@@ -13,8 +13,23 @@ function playFilm(film: HTMLVideoElement) {
 
 export function useTildeFilm() {
     const filmRef = useRef<HTMLVideoElement>(null);
+    const userPaused = useRef(false);
     const [ready, setReady] = useState(false);
     const [failed, setFailed] = useState(false);
+    const [playing, setPlaying] = useState(false);
+
+    const togglePlayback = () => {
+        const film = filmRef.current;
+        if (!film) return;
+        if (film.paused || film.error) {
+            userPaused.current = false;
+            setFailed(false);
+            playFilm(film);
+        } else {
+            userPaused.current = true;
+            film.pause();
+        }
+    };
 
     useEffect(() => {
         const film = filmRef.current;
@@ -22,13 +37,22 @@ export function useTildeFilm() {
         const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const controller = new AbortController();
         const { signal } = controller;
-        film.addEventListener("loadeddata", () => setReady(!motion.matches), { signal });
-        film.addEventListener("playing", () => setReady(!motion.matches), { signal });
+        film.addEventListener("loadeddata", () => setReady(true), { signal });
+        film.addEventListener(
+            "playing",
+            () => {
+                setReady(true);
+                setPlaying(true);
+            },
+            { signal },
+        );
+        film.addEventListener("pause", () => setPlaying(false), { signal });
         film.addEventListener(
             "error",
             () => {
                 setReady(false);
                 setFailed(true);
+                setPlaying(false);
             },
             { signal },
         );
@@ -38,7 +62,7 @@ export function useTildeFilm() {
                 if (motion.matches) {
                     film.pause();
                     setReady(false);
-                } else {
+                } else if (!userPaused.current) {
                     setFailed(false);
                     playFilm(film);
                 }
@@ -52,5 +76,5 @@ export function useTildeFilm() {
         };
     }, []);
 
-    return { filmRef, ready, failed };
+    return { filmRef, ready, failed, playing, togglePlayback };
 }

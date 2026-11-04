@@ -1,6 +1,5 @@
 import { tildeService } from "../../_data/service";
 import TildeHeroFilm from "./TildeHeroFilm";
-import TildeFilmNavigation from "./TildeFilmNavigation";
 
 export default function TildeHero() {
     return (
@@ -8,9 +7,11 @@ export default function TildeHero() {
             aria-labelledby="tilde-title"
             className="-mx-5 -mt-44 sm:-mx-8 sm:-mt-40 lg:-mx-16"
         >
-            <div data-cinematic-hero className="relative h-dvh w-full">
+            <div
+                data-cinematic-hero
+                className="relative aspect-video max-h-dvh w-full bg-[#d8ded3]"
+            >
                 <TildeHeroFilm />
-                <TildeFilmNavigation />
             </div>
             <div className="px-5 pt-14 sm:px-8 sm:pt-20 lg:px-16">
                 <p className="flex items-center gap-3 text-sm font-semibold text-[var(--service-ink)]">

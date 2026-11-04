@@ -3,14 +3,14 @@ import CompanyServiceCard from "./CompanyServiceCard";
 
 export default function CompanySection() {
     return (
-        <section className="border-t border-[#cdd1c9] pt-5" aria-labelledby="company-services">
-            <div className="mb-5 flex items-baseline justify-between gap-4">
-                <h2 id="company-services" className="text-lg font-semibold tracking-tight">
-                    서비스 소개
+        <section aria-labelledby="company-services">
+            <div className="mx-6 flex flex-wrap items-baseline justify-between gap-4 border-t border-[#c6cec1] pt-6 pb-10 sm:mx-10 lg:mx-[6vw]">
+                <h2 id="company-services" className="text-xs tracking-[.2em]">
+                    OUR SERVICES
                 </h2>
-                <span className="text-xs text-[#5f675e]">출시 준비 중</span>
+                <span className="text-xs text-[#6c786d]">새로운 만남을 준비하고 있습니다</span>
             </div>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid lg:grid-cols-2">
                 {services.map((service) => (
                     <CompanyServiceCard key={service.href} service={service} />
                 ))}

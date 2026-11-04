@@ -1,20 +1,18 @@
 .scene {
-    min-height: 185svh;
-    margin-top: 130px;
+    min-height: 170dvh;
     position: relative;
+    background: #131b2c;
 }
 .sticky {
     position: sticky;
-    top: 105px;
-    min-height: calc(100svh - 125px);
-    background: #12192b;
-    border-radius: 42px;
-    overflow: hidden;
+    top: 0;
+    min-height: 100dvh;
+    background: #131b2c;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 7vw;
     align-items: center;
-    padding: 65px clamp(30px, 6vw, 110px);
+    padding: 100px 7vw;
 }
 .copy {
     z-index: 1;
@@ -53,7 +51,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 650px;
+    min-height: 710px;
 }
 .phone {
     position: relative;
@@ -64,8 +62,8 @@
 }
 .orbit {
     position: absolute;
-    width: 95%;
-    max-width: 450px;
+    width: 65%;
+    max-width: 360px;
     aspect-ratio: 1;
     border: 1px solid #c29a7430;
     border-radius: 50%;
@@ -80,7 +78,7 @@
 }
 .dateNote {
     position: absolute;
-    right: -15px;
+    right: 0;
     bottom: 20px;
     font-size: 9px;
     line-height: 1.8;
@@ -93,17 +91,16 @@
 @media (max-width: 1000px) {
     .scene {
         min-height: auto;
-        margin-top: 80px;
     }
     .sticky {
         position: relative;
         top: auto;
         grid-template-columns: minmax(0, 1fr);
-        padding: 55px 40px;
-        gap: 15px;
+        padding: 96px 40px;
+        gap: 35px;
     }
     .visual {
-        min-height: 650px;
+        min-height: 710px;
     }
     .dateNote {
         right: 20px;
@@ -111,18 +108,14 @@
     }
 }
 @media (max-width: 600px) {
-    .scene {
-        margin-top: 70px;
-    }
     .sticky {
-        border-radius: 28px;
-        padding: 40px 23px;
+        padding: 80px 24px;
     }
     .visual {
-        min-height: 570px;
+        min-height: 640px;
     }
     .phone {
-        --device-width: 245px;
+        --device-width: 235px;
     }
     .steps {
         margin-top: 30px;
@@ -133,9 +126,6 @@
     .dateNote {
         font-size: 7px;
         right: 0;
-    }
-    .orbit {
-        width: 100%;
     }
 }
 @media (prefers-reduced-motion: reduce) {

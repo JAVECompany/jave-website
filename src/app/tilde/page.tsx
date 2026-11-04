@@ -14,7 +14,10 @@ export const metadata: Metadata = {
 
 export default function TildePage() {
     return (
-        <div className="w-full min-w-0 [--service-ink:#465543] [--service-accent:#697e56] [--service-muted:#606859] [--service-tint:#dce4d1]">
+        <div
+            data-immersive-page
+            className="w-full min-w-0 [--service-ink:#465543] [--service-accent:#697e56] [--service-muted:#606859] [--service-tint:#dce4d1]"
+        >
             <TildeHero />
             <TildeConnections />
             <TildeSports />
