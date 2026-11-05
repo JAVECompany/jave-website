@@ -78,14 +78,14 @@ export const todayGalleryFrames = todayGalleryGroups.flatMap(({ frames }) => fra
 export const todayGallerySelections = {
     phone: [
         { slots: [17, 15], offset: 0 },
-        { slots: [19], offset: 80 },
+        { slots: [19], offset: 100 },
     ],
     compact: [
         { slots: [17, 15], offset: 0 },
-        { slots: [18, 19], offset: 80 },
+        { slots: [18, 19], offset: 120 },
     ],
     tablet: [
         { slots: [17, 15], offset: 0 },
-        { slots: [18, 16, 19], offset: 80 },
+        { slots: [18, 19, 16], offset: 120 },
     ],
 };

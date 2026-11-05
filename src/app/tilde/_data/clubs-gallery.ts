@@ -57,7 +57,7 @@ export const clubsGalleryLayouts = {
         frames,
         [
             { slots: [21, 20], offset: 0 },
-            { slots: [23, 24, 22], offset: 80 },
+            { slots: [23, 24], offset: 80 },
         ],
         26,
     ),
