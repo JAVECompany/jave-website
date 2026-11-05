@@ -132,7 +132,11 @@ export const storyPhotos = {
         src: "/images/tilde/photography/clubs/21.png",
         alt: "야간 풋살장에서 빨간 조끼를 입고 공을 차는 남성",
     },
-    clubReading: { slotNumber: 22, src: null, alt: "좋아하는 책에 대해 이야기하는 동아리" },
+    clubReading: {
+        slotNumber: 22,
+        src: "/images/tilde/photography/clubs/22.png",
+        alt: "생일 케이크 앞에 모여 함께 사진을 찍는 다섯 친구",
+    },
     clubMaking: { slotNumber: 23, src: null, alt: "손으로 무언가를 만들며 함께하는 동아리" },
     clubOutdoor: {
         slotNumber: 24,
