@@ -123,11 +123,15 @@ export const storyPhotos = {
         alt: "햇살이 비치는 나무 아래에서 카메라를 들고 사진을 찍는 여성",
     },
     todayWalk: { slotNumber: 15, src: null, alt: "가볍게 산책하며 이야기를 나누는 친구들" },
-    todayCoffee: { slotNumber: 16, src: null, alt: "같이 마시는 커피와 편안한 대화" },
+    todayCoffee: {
+        slotNumber: 16,
+        src: "/images/tilde/photography/today/16.png",
+        alt: "햇살 아래 야외 트랙을 달리는 여성",
+    },
     todaySunset: {
         slotNumber: 18,
-        src: "/images/tilde/photography/today/18.png",
-        alt: "햇살 아래 야외 트랙을 달리는 여성",
+        src: "/images/tilde/photography/today/18.png?v=fa20b60d",
+        alt: "햇살이 비치는 공원에서 골든 리트리버와 함께 있는 남성",
     },
     todayLaugh: {
         slotNumber: 19,
