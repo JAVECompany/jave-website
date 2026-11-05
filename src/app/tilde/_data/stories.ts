@@ -122,5 +122,9 @@ export const storyPhotos = {
     clubDetail: { slotNumber: 21, src: null, alt: "함께하는 취미 속에서 웃는 사람들" },
     clubReading: { slotNumber: 22, src: null, alt: "좋아하는 책에 대해 이야기하는 동아리" },
     clubMaking: { slotNumber: 23, src: null, alt: "손으로 무언가를 만들며 함께하는 동아리" },
-    clubOutdoor: { slotNumber: 24, src: null, alt: "야외에서 같은 취미를 즐기는 친구들" },
+    clubOutdoor: {
+        slotNumber: 24,
+        src: "/images/tilde/photography/clubs/24.png",
+        alt: "푸른 하늘 아래 골프장에서 스윙하는 여성",
+    },
 } satisfies Record<string, StoryPhotoAsset>;
