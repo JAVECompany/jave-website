@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import ImageInteractionGuard from "../components/content-protection/ImageInteractionGuard";
 import Header from "../components/layout/header/Header";
 import Footer from "../components/layout/footer/Footer";
 import { company } from "../data/company";
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="ko" data-scroll-behavior="smooth">
             <body className="flex min-h-dvh w-full min-w-0 flex-col">
+                <ImageInteractionGuard />
                 <a href="#main-content" className="skip-link">
                     본문으로 바로가기
                 </a>

@@ -113,7 +113,11 @@ export const storyPhotos = {
         alt: "따뜻한 조명 아래 소파에 기대어 바라보는 여성",
     },
     todayDetail: { slotNumber: 14, src: null, alt: "함께 보내는 저녁의 작은 순간" },
-    todayGroup: { slotNumber: 17, src: null, alt: "오늘의 약속을 함께 즐기는 친구들" },
+    todayGroup: {
+        slotNumber: 17,
+        src: "/images/tilde/photography/today/17.png",
+        alt: "햇살이 비치는 나무 아래에서 카메라를 들고 사진을 찍는 여성",
+    },
     todayWalk: { slotNumber: 15, src: null, alt: "가볍게 산책하며 이야기를 나누는 친구들" },
     todayCoffee: { slotNumber: 16, src: null, alt: "같이 마시는 커피와 편안한 대화" },
     todaySunset: { slotNumber: 18, src: null, alt: "노을 아래 함께 보내는 저녁" },
