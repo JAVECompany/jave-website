@@ -137,7 +137,11 @@ export const storyPhotos = {
         src: "/images/tilde/photography/clubs/22.png",
         alt: "생일 케이크 앞에 모여 함께 사진을 찍는 다섯 친구",
     },
-    clubMaking: { slotNumber: 23, src: null, alt: "손으로 무언가를 만들며 함께하는 동아리" },
+    clubMaking: {
+        slotNumber: 23,
+        src: "/images/tilde/photography/clubs/23.png",
+        alt: "연습실에서 회색 트레이닝복을 입고 함께 거울 사진을 찍는 다섯 친구",
+    },
     clubOutdoor: {
         slotNumber: 24,
         src: "/images/tilde/photography/clubs/24-campfire.png",

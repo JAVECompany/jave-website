@@ -7,7 +7,7 @@ export const clubsGalleryPhotos = {
         className: "bg-[#d5ded4]",
         revealDelay: 180,
         desktopRotation: "-.6deg",
-        desktop: { x: 386, y: 438, width: 310 },
+        desktop: { x: 364, y: 438, width: 350 },
         narrow: { x: 0, y: 60, width: 470 },
     },
     detail: {
@@ -34,7 +34,7 @@ export const clubsGalleryPhotos = {
         className: "bg-[#d2d6cc]",
         revealDelay: 120,
         desktopRotation: "-.7deg",
-        desktop: { x: 126, y: 382, width: 236 },
+        desktop: { x: 100, y: 382, width: 236 },
     },
     outdoor: {
         photo: storyPhotos.clubOutdoor,
