@@ -17,7 +17,7 @@ export const clubsGalleryPhotos = {
         className: "bg-[#e4e6de]",
         revealDelay: 80,
         desktopRotation: "-1.1deg",
-        desktop: { x: 144, y: 60, width: 226 },
+        desktop: { x: 152, y: 52, width: 226 },
     },
     reading: {
         photo: storyPhotos.clubReading,
@@ -25,7 +25,7 @@ export const clubsGalleryPhotos = {
         className: "bg-[#dfd5c7]",
         revealDelay: 160,
         desktopRotation: ".8deg",
-        desktop: { x: 404, y: 218, width: 268 },
+        desktop: { x: 398, y: 200, width: 268 },
     },
     making: {
         photo: storyPhotos.clubMaking,
@@ -33,7 +33,7 @@ export const clubsGalleryPhotos = {
         className: "bg-[#d2d6cc]",
         revealDelay: 120,
         desktopRotation: "-.7deg",
-        desktop: { x: 128, y: 390, width: 252 },
+        desktop: { x: 130, y: 373, width: 252 },
     },
     outdoor: {
         photo: storyPhotos.clubOutdoor,
@@ -88,16 +88,12 @@ export const clubsGalleryLayouts = {
         clubsGalleryPhotos.activity,
         26,
     ),
-    tablet: prependGalleryFeature(
-        createGallerySelection(
-            frames,
-            [
-                { slots: [21], offset: 0 },
-                { slots: [23, 24], offset: 80 },
-            ],
-            26,
-        ),
-        clubsGalleryPhotos.activity,
-        26,
+    tablet: createGallerySelection(
+        frames,
+        [
+            { slots: [21, 23], offset: 0 },
+            { slots: [20, 24], offset: 110 },
+        ],
+        22,
     ),
 };

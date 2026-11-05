@@ -86,6 +86,6 @@ export const todayGallerySelections = {
     ],
     tablet: [
         { slots: [17, 15], offset: 0 },
-        { slots: [18, 19, 16], offset: 120 },
+        { slots: [18, 19], offset: 120 },
     ],
 };

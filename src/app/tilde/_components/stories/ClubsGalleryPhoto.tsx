@@ -15,7 +15,7 @@ export default function ClubsGalleryPhoto({ name }: ClubsGalleryPhotoProps) {
     const desktop = clubsGalleryLayouts.desktop.frames.get(photo.slotNumber);
     const desktopClassName =
         name === "outdoor"
-            ? "lg:relative lg:top-auto lg:left-auto lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:block lg:w-[82%] lg:self-start lg:justify-self-start"
+            ? "lg:relative lg:top-auto lg:left-auto lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:block lg:w-[82%] lg:-translate-x-[2vw] lg:self-start lg:justify-self-start"
             : "lg:top-[var(--club-desktop-top)] lg:left-[var(--club-desktop-left)] lg:block lg:w-[var(--club-desktop-width)]";
     const desktopImageWidth =
         name === "outdoor"
@@ -46,7 +46,7 @@ export default function ClubsGalleryPhoto({ name }: ClubsGalleryPhotoProps) {
                 <StoryPhoto
                     photo={photo}
                     className={`h-full ${className}`}
-                    sizes={`(min-width: 1024px) ${desktopImageWidth}vw, ${name === "activity" ? "100vw" : "50vw"}`}
+                    sizes={`(min-width: 1024px) ${desktopImageWidth}vw, (min-width: 768px) 50vw, ${name === "activity" ? "100vw" : "50vw"}`}
                     framed
                 />
             </TildeReveal>
