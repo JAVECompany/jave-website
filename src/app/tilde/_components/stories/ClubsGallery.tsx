@@ -14,13 +14,15 @@ export default function ClubsGallery() {
 
     return (
         <div
-            className="relative aspect-[var(--club-phone-ratio)] w-full min-w-0 min-[30rem]:aspect-[var(--club-compact-ratio)] md:aspect-[var(--club-tablet-ratio)] lg:col-start-1 lg:row-start-1 lg:aspect-[var(--club-desktop-ratio)]"
+            className="relative aspect-[var(--club-phone-ratio)] w-full min-w-0 min-[30rem]:aspect-[var(--club-compact-ratio)] md:aspect-[var(--club-tablet-ratio)] lg:contents"
             style={canvasStyle}
         >
-            <ClubsGalleryPhoto name="detail" />
-            <ClubsGalleryPhoto name="activity" />
-            <ClubsGalleryPhoto name="reading" />
-            <ClubsGalleryPhoto name="making" />
+            <div className="contents lg:relative lg:col-span-7 lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:block lg:aspect-[var(--club-desktop-ratio)] lg:min-w-0 lg:self-start">
+                <ClubsGalleryPhoto name="detail" />
+                <ClubsGalleryPhoto name="activity" />
+                <ClubsGalleryPhoto name="reading" />
+                <ClubsGalleryPhoto name="making" />
+            </div>
             <ClubsGalleryPhoto name="outdoor" />
         </div>
     );

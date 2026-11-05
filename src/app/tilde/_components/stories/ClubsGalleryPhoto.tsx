@@ -10,7 +10,16 @@ type ClubsGalleryPhotoProps = {
 type FrameStyle = CSSProperties & Record<`--club-${string}`, string>;
 
 export default function ClubsGalleryPhoto({ name }: ClubsGalleryPhotoProps) {
-    const { photo, aspectRatio, className, revealDelay, desktop } = clubsGalleryPhotos[name];
+    const { photo, aspectRatio, className, revealDelay } = clubsGalleryPhotos[name];
+    const desktop = clubsGalleryLayouts.desktop.frames.get(photo.slotNumber);
+    const desktopClassName =
+        name === "outdoor"
+            ? "lg:relative lg:top-auto lg:left-auto lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:block lg:w-full lg:self-start"
+            : "lg:top-[var(--club-desktop-top)] lg:left-[var(--club-desktop-left)] lg:block lg:w-[var(--club-desktop-width)]";
+    const desktopImageWidth =
+        name === "outdoor"
+            ? 42
+            : Math.ceil(((desktop?.width ?? 0) / clubsGalleryLayouts.desktop.canvas.width) * 59);
     const frameStyle: FrameStyle = { "--club-ratio": `${aspectRatio}` };
 
     for (const [breakpoint, layout] of Object.entries(clubsGalleryLayouts)) {
@@ -26,14 +35,14 @@ export default function ClubsGalleryPhoto({ name }: ClubsGalleryPhotoProps) {
 
     return (
         <div
-            className="absolute top-[var(--club-phone-top)] left-[var(--club-phone-left)] aspect-[var(--club-ratio)] w-[var(--club-phone-width)] [display:var(--club-phone-display)] min-[30rem]:top-[var(--club-compact-top)] min-[30rem]:left-[var(--club-compact-left)] min-[30rem]:w-[var(--club-compact-width)] min-[30rem]:[display:var(--club-compact-display)] md:top-[var(--club-tablet-top)] md:left-[var(--club-tablet-left)] md:w-[var(--club-tablet-width)] md:[display:var(--club-tablet-display)] lg:top-[var(--club-desktop-top)] lg:left-[var(--club-desktop-left)] lg:block lg:w-[var(--club-desktop-width)]"
+            className={`absolute top-[var(--club-phone-top)] left-[var(--club-phone-left)] aspect-[var(--club-ratio)] w-[var(--club-phone-width)] [display:var(--club-phone-display)] min-[30rem]:top-[var(--club-compact-top)] min-[30rem]:left-[var(--club-compact-left)] min-[30rem]:w-[var(--club-compact-width)] min-[30rem]:[display:var(--club-compact-display)] md:top-[var(--club-tablet-top)] md:left-[var(--club-tablet-left)] md:w-[var(--club-tablet-width)] md:[display:var(--club-tablet-display)] ${desktopClassName}`}
             style={frameStyle}
         >
             <TildeReveal className="h-full" delay={revealDelay}>
                 <StoryPhoto
                     photo={photo}
                     className={`h-full ${className}`}
-                    sizes={`(min-width: 1024px) ${Math.ceil((desktop.width / clubsGalleryLayouts.desktop.canvas.width) * 67)}vw, ${name === "activity" ? "100vw" : "50vw"}`}
+                    sizes={`(min-width: 1024px) ${desktopImageWidth}vw, ${name === "activity" ? "100vw" : "50vw"}`}
                     framed
                 />
             </TildeReveal>
