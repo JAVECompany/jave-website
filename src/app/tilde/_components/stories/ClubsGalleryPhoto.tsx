@@ -5,18 +5,12 @@ import StoryPhoto from "./StoryPhoto";
 
 type ClubsGalleryPhotoProps = {
     name: keyof typeof clubsGalleryPhotos;
-    desktopClassName?: string;
-    sizes: string;
 };
 
 type FrameStyle = CSSProperties & Record<`--club-${string}`, string>;
 
-export default function ClubsGalleryPhoto({
-    name,
-    desktopClassName = "lg:w-full",
-    sizes,
-}: ClubsGalleryPhotoProps) {
-    const { photo, aspectRatio, className, revealDelay } = clubsGalleryPhotos[name];
+export default function ClubsGalleryPhoto({ name }: ClubsGalleryPhotoProps) {
+    const { photo, aspectRatio, className, revealDelay, desktop } = clubsGalleryPhotos[name];
     const frameStyle: FrameStyle = { "--club-ratio": `${aspectRatio}` };
 
     for (const [breakpoint, layout] of Object.entries(clubsGalleryLayouts)) {
@@ -32,11 +26,16 @@ export default function ClubsGalleryPhoto({
 
     return (
         <div
-            className={`absolute top-[var(--club-phone-top)] left-[var(--club-phone-left)] col-start-1 col-end-2 row-start-2 row-end-3 aspect-[var(--club-ratio)] w-[var(--club-phone-width)] [display:var(--club-phone-display)] min-[30rem]:top-[var(--club-compact-top)] min-[30rem]:left-[var(--club-compact-left)] min-[30rem]:w-[var(--club-compact-width)] min-[30rem]:[display:var(--club-compact-display)] md:top-[var(--club-tablet-top)] md:left-[var(--club-tablet-left)] md:w-[var(--club-tablet-width)] md:[display:var(--club-tablet-display)] lg:relative lg:top-auto lg:left-auto lg:block ${desktopClassName}`}
+            className="absolute top-[var(--club-phone-top)] left-[var(--club-phone-left)] aspect-[var(--club-ratio)] w-[var(--club-phone-width)] [display:var(--club-phone-display)] min-[30rem]:top-[var(--club-compact-top)] min-[30rem]:left-[var(--club-compact-left)] min-[30rem]:w-[var(--club-compact-width)] min-[30rem]:[display:var(--club-compact-display)] md:top-[var(--club-tablet-top)] md:left-[var(--club-tablet-left)] md:w-[var(--club-tablet-width)] md:[display:var(--club-tablet-display)] lg:top-[var(--club-desktop-top)] lg:left-[var(--club-desktop-left)] lg:block lg:w-[var(--club-desktop-width)]"
             style={frameStyle}
         >
             <TildeReveal className="h-full" delay={revealDelay}>
-                <StoryPhoto photo={photo} className={`h-full ${className}`} sizes={sizes} framed />
+                <StoryPhoto
+                    photo={photo}
+                    className={`h-full ${className}`}
+                    sizes={`(min-width: 1024px) ${Math.ceil((desktop.width / clubsGalleryLayouts.desktop.canvas.width) * 67)}vw, 50vw`}
+                    framed
+                />
             </TildeReveal>
         </div>
     );
