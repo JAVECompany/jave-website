@@ -112,7 +112,11 @@ export const storyPhotos = {
         src: "/images/tilde/photography/conversation/01-woman-at-home.png",
         alt: "따뜻한 조명 아래 소파에 기대어 바라보는 여성",
     },
-    todayDetail: { slotNumber: 14, src: null, alt: "함께 보내는 저녁의 작은 순간" },
+    todayDetail: {
+        slotNumber: 14,
+        src: "/images/tilde/photography/today/14.png",
+        alt: "햇살 아래 야외 테니스 코트에서 공을 치는 여성",
+    },
     todayGroup: {
         slotNumber: 17,
         src: "/images/tilde/photography/today/17.png",
