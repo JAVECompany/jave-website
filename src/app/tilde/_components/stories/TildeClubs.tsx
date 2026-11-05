@@ -31,24 +31,32 @@ export default function TildeClubs() {
                     </TildeReveal>
                     <ClubsGalleryPhoto
                         name="activity"
-                        desktopClassName="lg:mt-10 lg:w-full"
+                        desktopClassName="lg:mt-12 lg:w-full"
                         sizes="(min-width: 1024px) 45vw, 50vw"
                     />
                 </div>
-                <div className="contents lg:col-start-1 lg:row-start-1 lg:mt-[20%] lg:block lg:min-w-0">
-                    <ClubsGalleryPhoto name="detail" sizes="(min-width: 1024px) 27vw, 50vw" />
+                <div className="contents lg:col-start-1 lg:row-start-1 lg:mt-[16%] lg:block lg:min-w-0">
+                    <ClubsGalleryPhoto
+                        name="detail"
+                        desktopClassName="lg:ml-auto lg:w-[90%]"
+                        sizes="(min-width: 1024px) 25vw, 50vw"
+                    />
                     <ClubsGalleryPhoto
                         name="reading"
-                        desktopClassName="lg:mt-6 lg:ml-auto lg:w-[68%]"
-                        sizes="(min-width: 1024px) 19vw, 50vw"
+                        desktopClassName="lg:mt-6 lg:ml-auto lg:w-[58%]"
+                        sizes="(min-width: 1024px) 16vw, 50vw"
                     />
                 </div>
                 <div className="contents lg:col-start-3 lg:row-start-1 lg:block lg:min-w-0">
-                    <ClubsGalleryPhoto name="making" sizes="(min-width: 1024px) 27vw, 50vw" />
                     <ClubsGalleryPhoto
                         name="outdoor"
-                        desktopClassName="lg:mt-[45%] lg:w-[82%]"
-                        sizes="(min-width: 1024px) 23vw, 50vw"
+                        desktopClassName="lg:w-[90%]"
+                        sizes="(min-width: 1024px) 25vw, 50vw"
+                    />
+                    <ClubsGalleryPhoto
+                        name="making"
+                        desktopClassName="lg:mt-6 lg:ml-auto lg:w-full"
+                        sizes="(min-width: 1024px) 27vw, 50vw"
                     />
                 </div>
                 <div
