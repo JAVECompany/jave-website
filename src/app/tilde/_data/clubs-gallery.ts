@@ -8,7 +8,7 @@ export const clubsGalleryPhotos = {
         revealDelay: 80,
         desktopRotation: "0deg",
         desktop: { x: 394, y: 0, width: 320 },
-        narrow: { x: 38, y: 0, width: 432 },
+        narrow: { x: 0, y: 0, width: 470 },
     },
     detail: {
         photo: storyPhotos.clubDetail,
@@ -17,7 +17,7 @@ export const clubsGalleryPhotos = {
         revealDelay: 80,
         desktopRotation: "-1.1deg",
         desktop: { x: 152, y: 52, width: 226 },
-        narrow: { x: 0, y: 272, width: 470 },
+        narrow: { x: 0, y: 294, width: 470 },
     },
     reading: {
         photo: storyPhotos.clubReading,
@@ -42,7 +42,7 @@ export const clubsGalleryPhotos = {
         className: "bg-[#c6d0c2]",
         revealDelay: 200,
         desktopRotation: ".5deg",
-        narrow: { x: 508, y: 726, width: 492 },
+        narrow: { x: 522, y: 726, width: 454 },
     },
 };
 
