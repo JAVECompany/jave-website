@@ -3,6 +3,23 @@ import { storyPhotos } from "./stories";
 // A full-width gallery with a free area below the right-hand frames for the story copy.
 export const conversationGalleryCanvas = { width: 1354, height: 2152 / 3 };
 
+// Keep the five selected photos at every size and add supporting moments as space allows.
+export const conversationGallerySelections = {
+    phone: [
+        { slots: [1, 3, 10], offset: 0 },
+        { slots: [4, 7], offset: 80 },
+    ],
+    compact: [
+        { slots: [1, 3, 10, 13], offset: 0 },
+        { slots: [2, 4, 7], offset: 60 },
+    ],
+    tablet: [
+        { slots: [1, 3, 9], offset: 0 },
+        { slots: [2, 4, 10], offset: 72 },
+        { slots: [6, 7, 13], offset: 140 },
+    ],
+};
+
 export const conversationGalleryFrames = [
     {
         photo: storyPhotos.conversationWalk,

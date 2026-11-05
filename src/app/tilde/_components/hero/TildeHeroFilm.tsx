@@ -17,7 +17,7 @@ export default function TildeHeroFilm() {
                 loading="eager"
                 fetchPriority="high"
                 sizes="100vw"
-                className="object-cover object-center"
+                className="object-contain object-center lg:[@media(min-aspect-ratio:16/9)]:object-cover"
             />
             <video
                 ref={filmRef}
@@ -30,7 +30,7 @@ export default function TildeHeroFilm() {
                 disablePictureInPicture
                 disableRemotePlayback
                 hidden={failed}
-                className={`absolute inset-0 size-full object-cover object-center ${ready ? "" : "opacity-0"}`}
+                className={`absolute inset-0 size-full object-contain object-center lg:[@media(min-aspect-ratio:16/9)]:object-cover ${ready ? "" : "opacity-0"}`}
             />
             <TildeFilmControl playing={playing} onToggle={togglePlayback} />
             {failed && (
