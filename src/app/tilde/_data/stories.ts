@@ -124,8 +124,8 @@ export const storyPhotos = {
     },
     clubActivity: {
         slotNumber: 20,
-        src: "/images/tilde/photography/clubs/20.png",
-        alt: "햇살이 비치는 골프장에서 함께 단체 사진을 찍는 동아리 사람들",
+        src: "/images/tilde/photography/clubs/20.png?v=853a0f82",
+        alt: "골프장에서 함께 모여 장난스러운 표정으로 단체 셀카를 찍는 친구들",
     },
     clubDetail: { slotNumber: 21, src: null, alt: "함께하는 취미 속에서 웃는 사람들" },
     clubReading: { slotNumber: 22, src: null, alt: "좋아하는 책에 대해 이야기하는 동아리" },
