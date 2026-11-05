@@ -33,7 +33,7 @@ export default function ClubsGalleryPhoto({ name }: ClubsGalleryPhotoProps) {
                 <StoryPhoto
                     photo={photo}
                     className={`h-full ${className}`}
-                    sizes={`(min-width: 1024px) ${Math.ceil((desktop.width / clubsGalleryLayouts.desktop.canvas.width) * 67)}vw, 50vw`}
+                    sizes={`(min-width: 1024px) ${Math.ceil((desktop.width / clubsGalleryLayouts.desktop.canvas.width) * 67)}vw, ${name === "activity" ? "100vw" : "50vw"}`}
                     framed
                 />
             </TildeReveal>

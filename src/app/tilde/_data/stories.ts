@@ -117,14 +117,22 @@ export const storyPhotos = {
     todayWalk: { slotNumber: 15, src: null, alt: "가볍게 산책하며 이야기를 나누는 친구들" },
     todayCoffee: { slotNumber: 16, src: null, alt: "같이 마시는 커피와 편안한 대화" },
     todaySunset: { slotNumber: 18, src: null, alt: "노을 아래 함께 보내는 저녁" },
-    todayLaugh: { slotNumber: 19, src: null, alt: "뜻밖의 약속에서 함께 웃는 순간" },
-    clubActivity: { slotNumber: 20, src: null, alt: "같은 취미를 함께 즐기는 동아리 사람들" },
+    todayLaugh: {
+        slotNumber: 19,
+        src: "/images/tilde/photography/today/19.png",
+        alt: "푸른 하늘 아래 골프장에서 스윙하는 여성",
+    },
+    clubActivity: {
+        slotNumber: 20,
+        src: "/images/tilde/photography/clubs/20.png",
+        alt: "햇살이 비치는 골프장에서 함께 단체 사진을 찍는 동아리 사람들",
+    },
     clubDetail: { slotNumber: 21, src: null, alt: "함께하는 취미 속에서 웃는 사람들" },
     clubReading: { slotNumber: 22, src: null, alt: "좋아하는 책에 대해 이야기하는 동아리" },
     clubMaking: { slotNumber: 23, src: null, alt: "손으로 무언가를 만들며 함께하는 동아리" },
     clubOutdoor: {
         slotNumber: 24,
-        src: "/images/tilde/photography/clubs/24.png",
-        alt: "푸른 하늘 아래 골프장에서 스윙하는 여성",
+        src: null,
+        alt: "야외에서 취미를 함께 즐기는 동아리 사람들",
     },
 } satisfies Record<string, StoryPhotoAsset>;

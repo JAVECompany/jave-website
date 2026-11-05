@@ -1,4 +1,5 @@
 import { createGallerySelection } from "../_lib/create-gallery-selection";
+import { prependGalleryFeature } from "../_lib/prepend-gallery-feature";
 import { storyPhotos } from "./stories";
 
 export const clubsGalleryPhotos = {
@@ -7,35 +8,35 @@ export const clubsGalleryPhotos = {
         aspectRatio: 16 / 9,
         className: "bg-[#d5ded4]",
         revealDelay: 80,
-        desktop: { x: 322, y: 0, width: 350 },
+        desktop: { x: 240, y: 0, width: 650 },
     },
     detail: {
         photo: storyPhotos.clubDetail,
         aspectRatio: 3 / 4,
         className: "bg-[#e4e6de]",
         revealDelay: 80,
-        desktop: { x: 0, y: 72, width: 300 },
+        desktop: { x: 0, y: 80, width: 216 },
     },
     reading: {
         photo: storyPhotos.clubReading,
         aspectRatio: 3 / 4,
         className: "bg-[#dfd5c7]",
         revealDelay: 160,
-        desktop: { x: 397, y: 219, width: 275 },
+        desktop: { x: 144, y: 392, width: 216 },
     },
     making: {
         photo: storyPhotos.clubMaking,
         aspectRatio: 16 / 9,
         className: "bg-[#d2d6cc]",
         revealDelay: 120,
-        desktop: { x: 0, y: 494, width: 350 },
+        desktop: { x: 384, y: 440, width: 320 },
     },
     outdoor: {
         photo: storyPhotos.clubOutdoor,
         aspectRatio: 3 / 4,
         className: "bg-[#c6d0c2]",
         revealDelay: 200,
-        desktop: { x: 694, y: 112, width: 306 },
+        desktop: { x: 728, y: 416, width: 224 },
     },
 };
 
@@ -58,28 +59,40 @@ export const clubsGalleryLayouts = {
             ]),
         ),
     },
-    phone: createGallerySelection(
-        frames,
-        [
-            { slots: [21, 20], offset: 0 },
-            { slots: [24], offset: 80 },
-        ],
+    phone: prependGalleryFeature(
+        createGallerySelection(
+            frames,
+            [
+                { slots: [21], offset: 0 },
+                { slots: [24], offset: 80 },
+            ],
+            26,
+        ),
+        clubsGalleryPhotos.activity,
         26,
     ),
-    compact: createGallerySelection(
-        frames,
-        [
-            { slots: [21, 20], offset: 0 },
-            { slots: [23, 24], offset: 80 },
-        ],
+    compact: prependGalleryFeature(
+        createGallerySelection(
+            frames,
+            [
+                { slots: [21], offset: 0 },
+                { slots: [23, 24], offset: 80 },
+            ],
+            26,
+        ),
+        clubsGalleryPhotos.activity,
         26,
     ),
-    tablet: createGallerySelection(
-        frames,
-        [
-            { slots: [21, 20], offset: 0 },
-            { slots: [23, 24], offset: 80 },
-        ],
+    tablet: prependGalleryFeature(
+        createGallerySelection(
+            frames,
+            [
+                { slots: [21], offset: 0 },
+                { slots: [23, 24], offset: 80 },
+            ],
+            26,
+        ),
+        clubsGalleryPhotos.activity,
         26,
     ),
 };
