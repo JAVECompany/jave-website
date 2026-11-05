@@ -120,7 +120,11 @@ export const storyPhotos = {
     },
     todayWalk: { slotNumber: 15, src: null, alt: "가볍게 산책하며 이야기를 나누는 친구들" },
     todayCoffee: { slotNumber: 16, src: null, alt: "같이 마시는 커피와 편안한 대화" },
-    todaySunset: { slotNumber: 18, src: null, alt: "노을 아래 함께 보내는 저녁" },
+    todaySunset: {
+        slotNumber: 18,
+        src: "/images/tilde/photography/today/18.png",
+        alt: "햇살 아래 야외 트랙을 달리는 여성",
+    },
     todayLaugh: {
         slotNumber: 19,
         src: "/images/tilde/photography/today/19.png",
