@@ -132,7 +132,7 @@ export const storyPhotos = {
     clubMaking: { slotNumber: 23, src: null, alt: "손으로 무언가를 만들며 함께하는 동아리" },
     clubOutdoor: {
         slotNumber: 24,
-        src: null,
-        alt: "야외에서 취미를 함께 즐기는 동아리 사람들",
+        src: "/images/tilde/photography/clubs/24-campfire.png",
+        alt: "캠핑장에서 모닥불을 둘러앉아 함께 웃는 친구들",
     },
 } satisfies Record<string, StoryPhotoAsset>;
