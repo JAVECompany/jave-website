@@ -1,5 +1,3 @@
-import { createGallerySelection } from "../_lib/create-gallery-selection";
-import { prependGalleryFeature } from "../_lib/prepend-gallery-feature";
 import { storyPhotos } from "./stories";
 
 export const clubsGalleryPhotos = {
@@ -10,6 +8,7 @@ export const clubsGalleryPhotos = {
         revealDelay: 80,
         desktopRotation: "0deg",
         desktop: { x: 394, y: 0, width: 320 },
+        narrow: { x: 38, y: 0, width: 432 },
     },
     detail: {
         photo: storyPhotos.clubDetail,
@@ -18,6 +17,7 @@ export const clubsGalleryPhotos = {
         revealDelay: 80,
         desktopRotation: "-1.1deg",
         desktop: { x: 152, y: 52, width: 226 },
+        narrow: { x: 0, y: 272, width: 470 },
     },
     reading: {
         photo: storyPhotos.clubReading,
@@ -26,6 +26,7 @@ export const clubsGalleryPhotos = {
         revealDelay: 160,
         desktopRotation: ".8deg",
         desktop: { x: 398, y: 200, width: 268 },
+        narrow: { x: 522, y: 90, width: 454 },
     },
     making: {
         photo: storyPhotos.clubMaking,
@@ -41,11 +42,27 @@ export const clubsGalleryPhotos = {
         className: "bg-[#c6d0c2]",
         revealDelay: 200,
         desktopRotation: ".5deg",
+        narrow: { x: 508, y: 726, width: 492 },
     },
 };
 
 const frames = Object.values(clubsGalleryPhotos);
 const desktopFrames = frames.filter((frame) => "desktop" in frame);
+const narrowFrames = frames.filter((frame) => "narrow" in frame);
+const narrowLayout = {
+    canvas: {
+        width: 1000,
+        height: Math.max(
+            ...narrowFrames.map(({ narrow, aspectRatio }) => narrow.y + narrow.width / aspectRatio),
+        ),
+    },
+    frames: new Map(
+        narrowFrames.map(({ photo, narrow, aspectRatio }) => [
+            photo.slotNumber,
+            { ...narrow, height: narrow.width / aspectRatio },
+        ]),
+    ),
+};
 
 export const clubsGalleryLayouts = {
     desktop: {
@@ -64,36 +81,7 @@ export const clubsGalleryLayouts = {
             ]),
         ),
     },
-    phone: prependGalleryFeature(
-        createGallerySelection(
-            frames,
-            [
-                { slots: [21], offset: 0 },
-                { slots: [24], offset: 80 },
-            ],
-            26,
-        ),
-        clubsGalleryPhotos.activity,
-        26,
-    ),
-    compact: prependGalleryFeature(
-        createGallerySelection(
-            frames,
-            [
-                { slots: [21], offset: 0 },
-                { slots: [23, 24], offset: 80 },
-            ],
-            26,
-        ),
-        clubsGalleryPhotos.activity,
-        26,
-    ),
-    tablet: createGallerySelection(
-        frames,
-        [
-            { slots: [21, 23], offset: 0 },
-            { slots: [20, 24], offset: 110 },
-        ],
-        22,
-    ),
+    phone: narrowLayout,
+    compact: narrowLayout,
+    tablet: narrowLayout,
 };

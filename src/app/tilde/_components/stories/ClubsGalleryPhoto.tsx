@@ -46,7 +46,7 @@ export default function ClubsGalleryPhoto({ name }: ClubsGalleryPhotoProps) {
                 <StoryPhoto
                     photo={photo}
                     className={`h-full ${className}`}
-                    sizes={`(min-width: 1024px) ${desktopImageWidth}vw, (min-width: 768px) 50vw, ${name === "activity" ? "100vw" : "50vw"}`}
+                    sizes={`(min-width: 1024px) ${desktopImageWidth}vw, 50vw`}
                     framed
                 />
             </TildeReveal>
