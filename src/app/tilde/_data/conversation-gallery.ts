@@ -4,14 +4,10 @@ import { storyPhotos } from "./stories";
 export const conversationGalleryCanvas = { width: 1354, height: 2152 / 3 };
 
 // Keep four core photos on phones and add supporting moments as space allows.
-export const conversationGalleryPhoneAspectRatios: Readonly<Partial<Record<number, number>>> = {
-    7: 16 / 9,
-};
-
 export const conversationGallerySelections = {
     phone: [
         { slots: [1, 3], offset: 0 },
-        { slots: [4, 7], offset: 0 },
+        { slots: [4, 7], offset: 80 },
     ],
     compact: [
         { slots: [1, 3, 10, 13], offset: 0 },

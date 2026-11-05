@@ -2,7 +2,6 @@ import type { CSSProperties } from "react";
 import {
     conversationGalleryCanvas,
     conversationGalleryFrames,
-    conversationGalleryPhoneAspectRatios,
     conversationGallerySelections,
 } from "../../_data/conversation-gallery";
 import { createGallerySelection } from "../../_lib/create-gallery-selection";
@@ -12,11 +11,7 @@ import StoryPhoto from "./StoryPhoto";
 type GalleryStyle = CSSProperties & Record<`--gallery-${string}`, string>;
 
 const mobileGallery = createGallerySelection(
-    conversationGalleryFrames.map((frame) => ({
-        ...frame,
-        aspectRatio:
-            conversationGalleryPhoneAspectRatios[frame.photo.slotNumber] ?? frame.aspectRatio,
-    })),
+    conversationGalleryFrames,
     conversationGallerySelections.phone,
     26,
 );
@@ -52,10 +47,7 @@ export default function ConversationGallery() {
                     const compactFrame = compactGallery.frames.get(photo.slotNumber);
                     const tabletFrame = tabletGallery.frames.get(photo.slotNumber);
                     const frameStyle: GalleryStyle = {
-                        "--gallery-mobile-photo-ratio": mobileFrame
-                            ? `${mobileFrame.width} / ${mobileFrame.height}`
-                            : `${aspectRatio}`,
-                        "--gallery-photo-ratio": `${aspectRatio}`,
+                        aspectRatio,
                         "--gallery-mobile-display": mobileFrame ? "block" : "none",
                         "--gallery-mobile-left": `${((mobileFrame?.x ?? 0) / mobileGallery.canvas.width) * 100}%`,
                         "--gallery-mobile-top": `${((mobileFrame?.y ?? 0) / mobileGallery.canvas.height) * 100}%`,
@@ -76,7 +68,7 @@ export default function ConversationGallery() {
                     return (
                         <div
                             key={photo.slotNumber}
-                            className="absolute top-[var(--gallery-mobile-top)] left-[var(--gallery-mobile-left)] aspect-[var(--gallery-mobile-photo-ratio)] w-[var(--gallery-mobile-width)] [display:var(--gallery-mobile-display)] min-[30rem]:top-[var(--gallery-compact-top)] min-[30rem]:left-[var(--gallery-compact-left)] min-[30rem]:aspect-[var(--gallery-photo-ratio)] min-[30rem]:w-[var(--gallery-compact-width)] min-[30rem]:[display:var(--gallery-compact-display)] md:top-[var(--gallery-tablet-top)] md:left-[var(--gallery-tablet-left)] md:w-[var(--gallery-tablet-width)] md:[display:var(--gallery-tablet-display)] lg:top-[var(--gallery-desktop-top)] lg:left-[var(--gallery-desktop-left)] lg:block lg:w-[var(--gallery-desktop-width)]"
+                            className="absolute top-[var(--gallery-mobile-top)] left-[var(--gallery-mobile-left)] w-[var(--gallery-mobile-width)] [display:var(--gallery-mobile-display)] min-[30rem]:top-[var(--gallery-compact-top)] min-[30rem]:left-[var(--gallery-compact-left)] min-[30rem]:w-[var(--gallery-compact-width)] min-[30rem]:[display:var(--gallery-compact-display)] md:top-[var(--gallery-tablet-top)] md:left-[var(--gallery-tablet-left)] md:w-[var(--gallery-tablet-width)] md:[display:var(--gallery-tablet-display)] lg:top-[var(--gallery-desktop-top)] lg:left-[var(--gallery-desktop-left)] lg:block lg:w-[var(--gallery-desktop-width)]"
                             style={frameStyle}
                         >
                             <TildeReveal className="h-full" delay={revealDelay}>
