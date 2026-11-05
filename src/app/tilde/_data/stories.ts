@@ -127,7 +127,11 @@ export const storyPhotos = {
         src: "/images/tilde/photography/clubs/20.png?v=853a0f82",
         alt: "골프장에서 함께 모여 장난스러운 표정으로 단체 셀카를 찍는 친구들",
     },
-    clubDetail: { slotNumber: 21, src: null, alt: "함께하는 취미 속에서 웃는 사람들" },
+    clubDetail: {
+        slotNumber: 21,
+        src: "/images/tilde/photography/clubs/21.png",
+        alt: "야간 풋살장에서 빨간 조끼를 입고 공을 차는 남성",
+    },
     clubReading: { slotNumber: 22, src: null, alt: "좋아하는 책에 대해 이야기하는 동아리" },
     clubMaking: { slotNumber: 23, src: null, alt: "손으로 무언가를 만들며 함께하는 동아리" },
     clubOutdoor: {
