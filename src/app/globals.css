@@ -45,6 +45,27 @@ svg {
     -webkit-touch-callout: none;
 }
 
+/* Keep native image menus from being the target of a touch-and-hold gesture. */
+img,
+picture {
+    pointer-events: none;
+}
+
+[data-image-protected],
+a:has(img),
+a:has(picture) {
+    -webkit-touch-callout: none;
+}
+
+[data-image-protected]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: auto;
+}
+
 body:has([data-tilde-page]) {
     background: #fdfbf8;
 }

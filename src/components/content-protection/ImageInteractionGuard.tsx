@@ -5,7 +5,14 @@ import { useEffect } from "react";
 export default function ImageInteractionGuard() {
     useEffect(() => {
         function preventImageInteraction(event: Event) {
-            if (event.target instanceof Element && event.target.closest("img, picture, svg")) {
+            if (!(event.target instanceof Element)) {
+                return;
+            }
+
+            const imageSurface = event.target.closest("img, picture, svg, [data-image-protected]");
+            const imageLink = event.target.closest("a")?.querySelector("img, picture");
+
+            if (imageSurface || imageLink) {
                 event.preventDefault();
             }
         }
