@@ -122,7 +122,11 @@ export const storyPhotos = {
         src: "/images/tilde/photography/today/17.png",
         alt: "햇살이 비치는 나무 아래에서 카메라를 들고 사진을 찍는 여성",
     },
-    todayWalk: { slotNumber: 15, src: null, alt: "가볍게 산책하며 이야기를 나누는 친구들" },
+    todayWalk: {
+        slotNumber: 15,
+        src: "/images/tilde/photography/today/15.png",
+        alt: "원목 벽 앞에서 펼친 카드를 얼굴 옆에 들고 미소 짓는 여성",
+    },
     todayCoffee: {
         slotNumber: 16,
         src: "/images/tilde/photography/today/16.png",
