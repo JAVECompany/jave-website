@@ -8,7 +8,7 @@ export default function TildeConversation() {
         <section
             id="tilde-connections"
             aria-labelledby="tilde-conversation-title"
-            className="-mx-2 grid scroll-mt-12 items-start bg-transparent pt-12 pb-40 sm:-mx-3 sm:pt-20 sm:pb-48 lg:-mx-10 lg:pt-28 lg:pb-72"
+            className="-mx-2 grid scroll-mt-12 items-start bg-transparent pt-12 pb-20 sm:-mx-3 sm:pt-20 sm:pb-28 lg:-mx-10 lg:pt-28 lg:pb-36"
         >
             <ConversationGallery />
             <TildeReveal

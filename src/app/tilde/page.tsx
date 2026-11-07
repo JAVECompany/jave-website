@@ -3,6 +3,7 @@ import TildeHero from "./_components/hero/TildeHero";
 import TildeConversation from "./_components/stories/TildeConversation";
 import TildeToday from "./_components/stories/TildeToday";
 import TildeClubs from "./_components/stories/TildeClubs";
+import TildeClosing from "./_components/stories/TildeClosing";
 import { tildeService } from "./_data/service";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function TildePage() {
             <TildeConversation />
             <TildeToday />
             <TildeClubs />
+            <TildeClosing />
         </div>
     );
 }
