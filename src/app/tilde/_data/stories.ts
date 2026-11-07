@@ -129,8 +129,8 @@ export const storyPhotos = {
     },
     todayCoffee: {
         slotNumber: 16,
-        src: "/images/tilde/photography/today/16.png?v=fa20b60d",
-        alt: "햇살이 비치는 공원에서 골든 리트리버와 함께 있는 남성",
+        src: "/images/tilde/photography/today/16.png?v=b46e5741",
+        alt: "햇살이 비치는 공원에서 자전거 헬멧을 쓰고 단체 셀카를 찍는 친구들",
     },
     todaySunset: {
         slotNumber: 18,
