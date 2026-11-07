@@ -139,8 +139,8 @@ export const storyPhotos = {
     },
     todayLaugh: {
         slotNumber: 19,
-        src: "/images/tilde/photography/today/19.png?v=282fe4d9",
-        alt: "골프장에서 클럽을 들고 브이 표시를 하며 환하게 웃는 여성",
+        src: "/images/tilde/photography/today/19.png?v=9a10b7b5",
+        alt: "햇살 아래 골프장에서 함께 단체 셀카를 찍는 네 친구",
     },
     clubActivity: {
         slotNumber: 20,
