@@ -114,8 +114,8 @@ export const storyPhotos = {
     },
     todayDetail: {
         slotNumber: 14,
-        src: "/images/tilde/photography/today/14.png",
-        alt: "햇살 아래 야외 테니스 코트에서 공을 치는 여성",
+        src: "/images/tilde/photography/today/14.png?v=01eedd19",
+        alt: "따뜻한 조명의 베이커리 카페에서 빵과 음료를 들고 단체 셀카를 찍는 친구들",
     },
     todayGroup: {
         slotNumber: 17,
