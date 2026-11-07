@@ -129,13 +129,13 @@ export const storyPhotos = {
     },
     todayCoffee: {
         slotNumber: 16,
-        src: "/images/tilde/photography/today/16.png?v=1fea02d8",
-        alt: "야간 공원 러닝 트랙에서 함께 단체 사진을 찍는 친구들",
+        src: "/images/tilde/photography/today/16.png?v=fa20b60d",
+        alt: "햇살이 비치는 공원에서 골든 리트리버와 함께 있는 남성",
     },
     todaySunset: {
         slotNumber: 18,
-        src: "/images/tilde/photography/today/18.png?v=fa20b60d",
-        alt: "햇살이 비치는 공원에서 골든 리트리버와 함께 있는 남성",
+        src: "/images/tilde/photography/today/18.png?v=1fea02d8",
+        alt: "야간 공원 러닝 트랙에서 함께 단체 사진을 찍는 친구들",
     },
     todayLaugh: {
         slotNumber: 19,
