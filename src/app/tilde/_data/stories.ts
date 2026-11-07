@@ -124,8 +124,8 @@ export const storyPhotos = {
     },
     todayWalk: {
         slotNumber: 15,
-        src: "/images/tilde/photography/today/15.png",
-        alt: "원목 벽 앞에서 펼친 카드를 얼굴 옆에 들고 미소 짓는 여성",
+        src: "/images/tilde/photography/today/15.png?v=11efca44",
+        alt: "야간 테니스 코트에서 함께 모여 단체 셀카를 찍는 친구들",
     },
     todayCoffee: {
         slotNumber: 16,
