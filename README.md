@@ -144,7 +144,8 @@ jave-website/
 │   │   │   │   │   ├── TildeConversation.tsx
 │   │   │   │   │   ├── ConversationGallery.tsx # 가로 폭을 넓게 쓰는 13장 벽면 갤러리
 │   │   │   │   │   ├── TildeToday.tsx
-│   │   │   │   │   ├── TodayGallery.tsx # 15번 가로 장면을 중심으로 상대 좌표를 사용하는 6장 갤러리
+│   │   │   │   │   ├── TodayGallery.tsx # 오른쪽 다섯 장의 상대 좌표와 반응형 배치
+│   │   │   │   │   ├── TodayCyclingPhoto.tsx # 넓은 화면에서 문구 아래에 놓는 16번 자전거 사진
 │   │   │   │   │   ├── TildeClubs.tsx
 │   │   │   │   │   ├── TildeClosing.tsx # 공통 약관 푸터 앞의 마무리 문구
 │   │   │   │   │   ├── ClubsGallery.tsx # 동아리 사진 네 장 묶음·24번 프레임과 반응형 배치
