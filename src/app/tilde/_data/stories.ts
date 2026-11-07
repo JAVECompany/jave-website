@@ -129,8 +129,8 @@ export const storyPhotos = {
     },
     todayCoffee: {
         slotNumber: 16,
-        src: "/images/tilde/photography/today/16.png",
-        alt: "햇살 아래 야외 트랙을 달리는 여성",
+        src: "/images/tilde/photography/today/16.png?v=1fea02d8",
+        alt: "야간 공원 러닝 트랙에서 함께 단체 사진을 찍는 친구들",
     },
     todaySunset: {
         slotNumber: 18,
